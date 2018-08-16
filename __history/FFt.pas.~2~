@@ -1,0 +1,124 @@
+unit FFt;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, VclTee.TeeGDIPlus, VCLTee.TeEngine,
+  Vcl.ExtCtrls, VCLTee.TeeProcs, VCLTee.Chart, Vcl.StdCtrls, VCLTee.Series,
+  VCLTee.DBChart, Vcl.Menus, Vcl.ComCtrls;
+
+type
+  complex = record         //---------定义复数 --------
+   r:double;  //实部
+   i:double;  //虚部
+end;
+
+
+procedure  fftc(var x:array of complex;n:integer;isign:integer);
+
+
+implementation
+
+
+procedure  complex_exp(var r:complex;z:complex);
+var
+   expx:double;
+begin
+        expx:= exp(z.r);
+	r.r:= expx * cos(z.i);
+	r.i:= expx * sin(z.i);
+end;
+
+procedure  fftc(var x:array of complex;n:integer;isign:integer);
+{*功能：对传入的复数数组x进行FFT变换 --
+**参数：x		:要进行变换的复数数组
+**      n		:x数组的大小
+**      isign	:一般传入 1 .
+**说明：1.将原始数据，赋值给要传入的复数数组的实部，虚部补零。
+**	  	2.传入的实数数组大小必须为2的n次幂，若原始数据不足，必须补零处理。
+}
+var
+i,l,m,mr,tmp_int:integer;
+t,tmp_complex,tmp:complex;
+pisign:double;
+begin
+    	pisign:= isign*3.14159265358979323846;
+     	mr:= 0;
+
+  for  m:= 1 to  n-1  do
+	begin
+		l:=n;
+		l:=l div 2;
+		while ((mr + l) >= n) do
+		begin
+	            l:=l div 2;
+		end;
+		mr:= mr mod l + l;
+		if(mr > m) then
+		begin
+			t.r:= x[m].r;
+			t.i:= x[m].i;
+			x[m].r:= x[mr].r;
+			x[m].i:= x[mr].i;
+			x[mr].r:= t.r;
+			x[mr].i:= t.i;
+		end;
+	end;
+
+        l:= 1;
+	while(l < n) do
+	begin
+		for m:= 0  to l-1  do
+		begin
+			tmp_int:= l * 2;
+                        i:=m;
+                        if  tmp_int<0 then
+                        begin
+                           while(i>=(n - 1)) do
+                           begin
+                           	tmp.r:= 0.0;
+				tmp.i:= m * pisign /l;
+				complex_exp(tmp_complex, tmp);
+				t.r:= x[i+l].r * tmp_complex.r - x[i+l].i * tmp_complex.i;
+				t.i:= x[i+l].r * tmp_complex.i + x[i+l].i * tmp_complex.r;
+				x[i+l].r:= x[i].r - t.r;
+				x[i+l].i:= x[i].i - t.i;
+				x[i].r:= x[i].r + t.r;
+				x[i].i:= x[i].i + t.i;
+                           i:=i+tmp_int;
+                           end;
+                        end;
+
+                        if  tmp_int>0 then
+                        begin
+                           while((i+l)<n) do
+                           begin
+                           	tmp.r:= 0.0;
+				tmp.i:= m * pisign /l;
+			     	complex_exp(tmp_complex, tmp);
+                                try
+                                begin
+			     	t.r:= x[i+l].r * tmp_complex.r - x[i+l].i * tmp_complex.i;
+			    	t.i:= x[i+l].r * tmp_complex.i + x[i+l].i * tmp_complex.r;
+                                x[i+l].r:= x[i].r - t.r;
+			 	x[i+l].i:= x[i].i - t.i;
+				x[i].r:= x[i].r + t.r;
+				x[i].i:= x[i].i + t.i;
+                                end;
+                                except
+                                  ShowMessage(inttostr(i));
+                                end;
+                           i:=i+tmp_int;
+                           end;
+                        end;
+
+		end;
+		l:=l*2;
+	end;
+
+end;
+
+
+end.
+

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2017/01/12 17:35:10.000.424,=C:\Users\Ocean\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/01/12 17:35:44.000.194,C:\Users\Ocean\OneDrive\CS_SourceCode\Delphi\锚索质量检测_new_0.2max\Unit1.dfm=C:\Users\Ocean\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2017/01/12 17:35:44.000.194,C:\Users\Ocean\OneDrive\CS_SourceCode\Delphi\锚索质量检测_new_0.2max\Unit1.pas=C:\Users\Ocean\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/01/12 17:52:22.000.526,C:\Users\Ocean\OneDrive\CS_SourceCode\Delphi\锚索质量检测_new_0.2max\Project1.dproj=C:\Users\Ocean\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2017/02/18 01:32:05.000.296,=C:\Users\Ocean\OneDrive\CS_SourceCode\Delphi\锚索质量检测_new_0.5\Seg_Unit.pas</Transaction>
+    <Transaction>2017/02/18 01:32:24.000.352,=C:\Users\Ocean\OneDrive\CS_SourceCode\Delphi\锚索质量检测_new_0.5\FFt_Unit.pas</Transaction>
+    <Transaction>2017/03/23 11:08:50.000.429,=C:\Users\Ocean\OneDrive\CS_SourceCode\Delphi\锚索质量检测_new_1.7\Unit2.pas</Transaction>
+    <Transaction>2017/03/23 11:09:06.000.728,C:\Users\Ocean\OneDrive\CS_SourceCode\Delphi\锚索质量检测_new_1.7\Unit2.pas=C:\Users\Ocean\OneDrive\CS_SourceCode\Delphi\锚索质量检测_new_1.7\W.pas</Transaction>
+    <Transaction>2017/03/23 11:09:31.000.753,C:\Users\Ocean\OneDrive\CS_SourceCode\Delphi\锚索质量检测_new_1.7\W.pas=C:\Users\Ocean\OneDrive\CS_SourceCode\Delphi\锚索质量检测_new_1.7\Model.pas</Transaction>
+    <Transaction>2017/03/23 11:09:57.000.639,C:\Users\Ocean\OneDrive\CS_SourceCode\Delphi\锚索质量检测_new_1.7\Unit1.dfm=C:\Users\Ocean\OneDrive\CS_SourceCode\Delphi\锚索质量检测_new_1.7\View.dfm</Transaction>
+    <Transaction>2017/03/23 11:09:57.000.639,C:\Users\Ocean\OneDrive\CS_SourceCode\Delphi\锚索质量检测_new_1.7\Unit1.pas=C:\Users\Ocean\OneDrive\CS_SourceCode\Delphi\锚索质量检测_new_1.7\View.pas</Transaction>
+    <Transaction>2017/03/23 11:15:19.000.293,C:\Users\Ocean\OneDrive\CS_SourceCode\Delphi\锚索质量检测_new_1.7\Model.pas=</Transaction>
+    <Transaction>2017/03/23 11:15:44.000.481,C:\Users\Ocean\OneDrive\CS_SourceCode\Delphi\锚索质量检测_new_1.7\Seg_Unit.pas=C:\Users\Ocean\OneDrive\CS_SourceCode\Delphi\锚索质量检测_new_1.7\Model.pas</Transaction>
+    <Transaction>2017/03/23 11:17:28.000.224,=C:\Users\Ocean\OneDrive\CS_SourceCode\Delphi\锚索质量检测_new_1.7\Unit1.pas</Transaction>
+    <Transaction>2017/03/23 11:17:37.000.792,C:\Users\Ocean\OneDrive\CS_SourceCode\Delphi\锚索质量检测_new_1.7\Unit1.pas=C:\Users\Ocean\OneDrive\CS_SourceCode\Delphi\锚索质量检测_new_1.7\My.pas</Transaction>
+    <Transaction>2017/03/23 11:18:15.000.600,C:\Users\Ocean\OneDrive\CS_SourceCode\Delphi\锚索质量检测_new_1.7\My.pas=C:\Users\Ocean\OneDrive\CS_SourceCode\Delphi\锚索质量检测_new_1.7\MyWidget.pas</Transaction>
+    <Transaction>2017/03/23 11:18:24.000.696,C:\Users\Ocean\OneDrive\CS_SourceCode\Delphi\锚索质量检测_new_1.7\MyWidget.pas=C:\Users\Ocean\OneDrive\CS_SourceCode\Delphi\锚索质量检测_new_1.7\Widget.pas</Transaction>
+    <Transaction>2017/03/23 11:18:42.000.619,C:\Users\Ocean\OneDrive\CS_SourceCode\Delphi\锚索质量检测_new_1.7\FFt_Unit.pas=C:\Users\Ocean\OneDrive\CS_SourceCode\Delphi\锚索质量检测_new_1.7\FFt.pas</Transaction>
+    <Transaction>2017/03/23 11:19:48.000.429,C:\Users\Ocean\OneDrive\CS_SourceCode\Delphi\锚索质量检测_new_1.7\FFt.pas=C:\Users\Ocean\OneDrive\CS_SourceCode\Delphi\锚索质量检测_new_1.7\FF.pas</Transaction>
+    <Transaction>2017/03/23 11:19:54.000.213,C:\Users\Ocean\OneDrive\CS_SourceCode\Delphi\锚索质量检测_new_1.7\FF.pas=C:\Users\Ocean\OneDrive\CS_SourceCode\Delphi\锚索质量检测_new_1.7\FFT.pas</Transaction>
+    <Transaction>2017/03/23 11:32:15.000.101,C:\Users\Ocean\OneDrive\CS_SourceCode\Delphi\锚索质量检测_new_1.7\Model.pas=C:\Users\Ocean\OneDrive\CS_SourceCode\Delphi\锚索质量检测_new_1.7\Model_Seg.pas</Transaction>
+    <Transaction>2017/03/23 11:41:43.000.172,C:\Users\Ocean\OneDrive\CS_SourceCode\Delphi\锚索质量检测_new_1.7\Widget.pas=</Transaction>
+    <Transaction>2017/03/23 11:43:20.000.809,=C:\Users\Ocean\OneDrive\CS_SourceCode\Delphi\锚索质量检测_new_1.7\Widget.pas</Transaction>
+  </Transactions>
+</BorlandProject>

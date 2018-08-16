@@ -1,0 +1,2616 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.ExtCtrls,
+  Vcl.TabNotBk,
+  Vcl.StdCtrls, Vcl.Imaging.pngimage, Vcl.Imaging.jpeg, Vcl.Buttons,
+  Math, IniFiles, Seg_Unit;
+
+type
+  TForm1 = class(TForm)
+    PageControlAll: TPageControl;
+    TabSheetWellcome: TTabSheet;
+    Panel1: TPanel;
+    PageControl1: TPageControl;
+    TabSheetSource: TTabSheet;
+    PanelS1: TPanel;
+    PanelS2: TPanel;
+    PanelS3: TPanel;
+    TabSheetLength: TTabSheet;
+    PanelL2: TPanel;
+    TabSheetForce: TTabSheet;
+    PanelF2: TPanel;
+    TabSheetResult: TTabSheet;
+    PanelR2: TPanel;
+    PanelStoR: TPanel;
+    ImageStoR: TImage;
+    PanelStoF: TPanel;
+    ImageStoF: TImage;
+    PanelStoL: TPanel;
+    ImageStoL: TImage;
+    PanelStoS: TPanel;
+    ImageStoS: TImage;
+    PanelStoB: TPanel;
+    ImageStoB: TImage;
+    Panel11: TPanel;
+    PanelR1: TPanel;
+    Panel9: TPanel;
+    Image1: TImage;
+    Panel10: TPanel;
+    Image2: TImage;
+    Panel12: TPanel;
+    Image3: TImage;
+    Panel13: TPanel;
+    Image4: TImage;
+    Panel14: TPanel;
+    Image5: TImage;
+    Panel15: TPanel;
+    Panel4: TPanel;
+    Panel16: TPanel;
+    Image6: TImage;
+    Panel17: TPanel;
+    Image7: TImage;
+    Panel18: TPanel;
+    Image8: TImage;
+    Panel19: TPanel;
+    Image9: TImage;
+    Panel20: TPanel;
+    Image10: TImage;
+    Panel21: TPanel;
+    Panel22: TPanel;
+    Panel23: TPanel;
+    Image11: TImage;
+    Panel24: TPanel;
+    Image12: TImage;
+    Panel25: TPanel;
+    Image13: TImage;
+    Panel26: TPanel;
+    Image14: TImage;
+    Panel27: TPanel;
+    Image15: TImage;
+    Panel28: TPanel;
+    GridPanel3: TGridPanel;
+    PaintBoxNull1: TPaintBox;
+    GridPanel4: TGridPanel;
+    Panel30: TPanel;
+    Panel31: TPanel;
+    Image16: TImage;
+    Panel32: TPanel;
+    Image17: TImage;
+    Panel33: TPanel;
+    Image18: TImage;
+    Panel34: TPanel;
+    Image19: TImage;
+    Panel37: TPanel;
+    Panel38: TPanel;
+    Panel39: TPanel;
+    Label11: TLabel;
+    Panel53: TPanel;
+    MyPanel2: TPanel;
+    Label15: TLabel;
+    Panel56: TPanel;
+    Panel57: TPanel;
+    Panel58: TPanel;
+    Label16: TLabel;
+    ComboBox2: TComboBox;
+    Panel59: TPanel;
+    Panel60: TPanel;
+    Label17: TLabel;
+    HZ_2B: TEdit;
+    Panel61: TPanel;
+    Panel62: TPanel;
+    Label18: TLabel;
+    HZ_1B: TEdit;
+    Panel63: TPanel;
+    MyPanel3: TPanel;
+    Label1: TLabel;
+    MyPanel0: TPanel;
+    Panel44: TPanel;
+    Panel41: TPanel;
+    Panel42: TPanel;
+    Label7: TLabel;
+    Panel65: TPanel;
+    Panel67: TPanel;
+    Label8: TLabel;
+    AnalysisLength_Reviary_false: TRadioButton;
+    Panel68: TPanel;
+    Label9: TLabel;
+    AnalysisLength_Reviary_true: TRadioButton;
+    Panel84: TPanel;
+    Label23: TLabel;
+    Panel86: TPanel;
+    Panel87: TPanel;
+    Panel96: TPanel;
+    Panel97: TPanel;
+    Image21: TImage;
+    Label33: TLabel;
+    Panel98: TPanel;
+    Image22: TImage;
+    Label34: TLabel;
+    Panel69: TPanel;
+    Panel71: TPanel;
+    Image20: TImage;
+    Label2: TLabel;
+    Panel72: TPanel;
+    Panel73: TPanel;
+    PaintBoxA: TPaintBox;
+    Panel89: TPanel;
+    Panel106: TPanel;
+    Label41: TLabel;
+    Panel108: TPanel;
+    Label42: TLabel;
+    Panel110: TPanel;
+    Panel127: TPanel;
+    Panel129: TPanel;
+    Panel137: TPanel;
+    Label55: TLabel;
+    Panel138: TPanel;
+    Panel139: TPanel;
+    PanelSet: TPanel;
+    PanelSetLeft: TPanel;
+    PanelSetRight: TPanel;
+    Timer1: TTimer;
+    PanelSetCenter: TPanel;
+    PanelSetBack: TPanel;
+    Panel167: TPanel;
+    Image23: TImage;
+    PanelSet3: TPanel;
+    Label69: TLabel;
+    Edit39: TEdit;
+    Panel170: TPanel;
+    Panel171: TPanel;
+    Label70: TLabel;
+    MHZ_threshold: TEdit;
+    Panel172: TPanel;
+    Label71: TLabel;
+    MHZ_Width: TEdit;
+    PanelSet1: TPanel;
+    Label72: TLabel;
+    Edit42: TEdit;
+    Panel177: TPanel;
+    Panel178: TPanel;
+    Label73: TLabel;
+    Edit43: TEdit;
+    Panel179: TPanel;
+    Label74: TLabel;
+    Num: TEdit;
+    Panel180: TPanel;
+    Label75: TLabel;
+    wave2: TEdit;
+    Panel181: TPanel;
+    Label76: TLabel;
+    wave1: TEdit;
+    Panel130: TPanel;
+    Panel131: TPanel;
+    Panel133: TPanel;
+    Image25: TImage;
+    Label52: TLabel;
+    Panel134: TPanel;
+    Panel36: TPanel;
+    FileOpenDialog1: TFileOpenDialog;
+    Panel46: TPanel;
+    Panel49: TPanel;
+    Label60: TLabel;
+    WindowW: TComboBox;
+    PanelSet2: TPanel;
+    Label61: TLabel;
+    Edit3: TEdit;
+    Panel142: TPanel;
+    Panel144: TPanel;
+    Panel145: TPanel;
+    Label62: TLabel;
+    ComboBox3: TComboBox;
+    Panel146: TPanel;
+    Panel147: TPanel;
+    Label63: TLabel;
+    HZ_2: TEdit;
+    Panel149: TPanel;
+    Label67: TLabel;
+    HZ_1: TEdit;
+    Panel150: TPanel;
+    Panel154: TPanel;
+    Panel155: TPanel;
+    Panel156: TPanel;
+    Panel164: TPanel;
+    Panel151: TPanel;
+    Panel152: TPanel;
+    Panel153: TPanel;
+    PanelSet4: TPanel;
+    Label64: TLabel;
+    Edit37: TEdit;
+    Panel160: TPanel;
+    Panel161: TPanel;
+    Panel162: TPanel;
+    Label65: TLabel;
+    Edit30: TEdit;
+    PanelSetOK: TPanel;
+    PanelSet_OK: TPanel;
+    Panel183: TPanel;
+    Panel148: TPanel;
+    Panel173: TPanel;
+    Label66: TLabel;
+    Panel174: TPanel;
+    Edit31: TEdit;
+    Panel165: TPanel;
+    PanelDefault: TPanel;
+    PanelSetBackup: TPanel;
+    Panel158: TPanel;
+    Panel159: TPanel;
+    Panel52: TPanel;
+    Panel168: TPanel;
+    PanelMessage: TPanel;
+    PaintBoxB: TPaintBox;
+    Panel163: TPanel;
+    Panel166: TPanel;
+    Panel175: TPanel;
+    Image28: TImage;
+    Label77: TLabel;
+    Panel176: TPanel;
+    PaintBoxC: TPaintBox;
+    Panel185: TPanel;
+    Panel188: TPanel;
+    Panel111: TPanel;
+    Label43: TLabel;
+    Panel112: TPanel;
+    Panel113: TPanel;
+    Label44: TLabel;
+    densityB: TEdit;
+    Panel114: TPanel;
+    Label45: TLabel;
+    FreedomLengthB: TEdit;
+    Panel83: TPanel;
+    Label4: TLabel;
+    Panel91: TPanel;
+    Label5: TLabel;
+    MHZ_thresholdB: TEdit;
+    Panel92: TPanel;
+    Label6: TLabel;
+    MHZ_WidthB: TEdit;
+    Panel93: TPanel;
+    Label10: TLabel;
+    WindowWB: TComboBox;
+    Panel118: TPanel;
+    Panel80: TPanel;
+    Panel101: TPanel;
+    Panel2: TPanel;
+    Panel3: TPanel;
+    Panel8: TPanel;
+    Panel74: TPanel;
+    Label24: TLabel;
+    density: TEdit;
+    Panel75: TPanel;
+    Label25: TLabel;
+    Panel76: TPanel;
+    Panel77: TPanel;
+    Label26: TLabel;
+    Panel78: TPanel;
+    Edit5: TEdit;
+    PanelPaintSet: TPanel;
+    Panel85: TPanel;
+    Label27: TLabel;
+    Panel109: TPanel;
+    Panel102: TPanel;
+    Label28: TLabel;
+    TapeNumber: TLabel;
+    Panel103: TPanel;
+    FreedomLength: TLabel;
+    Label39: TLabel;
+    Panel116: TPanel;
+    FixedLength: TLabel;
+    Label21: TLabel;
+    Panel99: TPanel;
+    Panel117: TPanel;
+    Panel119: TPanel;
+    Image29: TImage;
+    Panel120: TPanel;
+    Panel121: TPanel;
+    Panel122: TPanel;
+    Panel123: TPanel;
+    Panel124: TPanel;
+    Panel115: TPanel;
+    Panel125: TPanel;
+    Panel126: TPanel;
+    Panel184: TPanel;
+    Panel186: TPanel;
+    Panel187: TPanel;
+    Label19: TLabel;
+    Panel193: TPanel;
+    Panel90: TPanel;
+    Panel104: TPanel;
+    Panel105: TPanel;
+    Panel194: TPanel;
+    Panel195: TPanel;
+    Panel196: TPanel;
+    Label29: TLabel;
+    Image27: TImage;
+    Panel197: TPanel;
+    Panel198: TPanel;
+    Panel199: TPanel;
+    Panel200: TPanel;
+    Panel201: TPanel;
+    Panel202: TPanel;
+    Panel203: TPanel;
+    Label30: TLabel;
+    Panel204: TPanel;
+    LabelWindowRightAutoMove: TLabel;
+    LabelWindowLeftAutoMove: TLabel;
+    Panel157: TPanel;
+    Panel182: TPanel;
+    Panel205: TPanel;
+    Panel206: TPanel;
+    Panel207: TPanel;
+    Panel208: TPanel;
+    SelectWindowsMoveB: TLabel;
+    Panel209: TPanel;
+    SelectWindowsMoveA: TLabel;
+    Panel79: TPanel;
+    F: TLabel;
+    Label31: TLabel;
+    Panel210: TPanel;
+    Panel40: TPanel;
+    baseHz: TLabel;
+    Label13: TLabel;
+    Timer2: TTimer;
+    Panel143: TPanel;
+    Panel223: TPanel;
+    Label37: TLabel;
+    Panel224: TPanel;
+    Panel226: TPanel;
+    ObjectName: TLabel;
+    Panel227: TPanel;
+    LabelForce: TLabel;
+    Panel229: TPanel;
+    Panel232: TPanel;
+    Panel234: TPanel;
+    Panel235: TPanel;
+    Label49: TLabel;
+    Panel236: TPanel;
+    Panel237: TPanel;
+    Panel239: TPanel;
+    Panel242: TPanel;
+    Panel135: TPanel;
+    Panel136: TPanel;
+    PaintBoxRoundA: TPaintBox;
+    Label12: TLabel;
+    TabSheet1_1: TTabSheet;
+    TabSheet1_2: TTabSheet;
+    TabSheet1_3: TTabSheet;
+    TabSheet1_4: TTabSheet;
+    Panel5: TPanel;
+    Label3: TLabel;
+    Label36: TLabel;
+    Label58: TLabel;
+    Label59: TLabel;
+    Label68: TLabel;
+    Label78: TLabel;
+    Panel6: TPanel;
+    editFileName: TEdit;
+    editName: TEdit;
+    EditMileage: TEdit;
+    EditBuilder: TEdit;
+    EditTester: TEdit;
+    EditData: TEdit;
+    Panel7: TPanel;
+    Panel211: TPanel;
+    Panel212: TPanel;
+    Panel213: TPanel;
+    Panel214: TPanel;
+    Panel219: TPanel;
+    Panel243: TPanel;
+    Panel244: TPanel;
+    Panel245: TPanel;
+    Panel246: TPanel;
+    Panel247: TPanel;
+    Panel248: TPanel;
+    Panel249: TPanel;
+    Panel250: TPanel;
+    Panel251: TPanel;
+    Panel252: TPanel;
+    Panel253: TPanel;
+    Panel255: TPanel;
+    Panel256: TPanel;
+    Panel258: TPanel;
+    Panel259: TPanel;
+    Panel260: TPanel;
+    Panel254: TPanel;
+    Panel261: TPanel;
+    Panel265: TPanel;
+    Panel266: TPanel;
+    Label54: TLabel;
+    Panel267: TPanel;
+    Panel268: TPanel;
+    Panel269: TPanel;
+    Label56: TLabel;
+    Panel270: TPanel;
+    Label57: TLabel;
+    Panel271: TPanel;
+    Panel273: TPanel;
+    Panel276: TPanel;
+    Label81: TLabel;
+    Panel278: TPanel;
+    EditFileName1: TEdit;
+    EditLength: TEdit;
+    EditForce: TEdit;
+    EditDateB: TEdit;
+    Panel279: TPanel;
+    Panel282: TPanel;
+    Panel283: TPanel;
+    Panel284: TPanel;
+    Panel285: TPanel;
+    Panel286: TPanel;
+    Panel287: TPanel;
+    Panel292: TPanel;
+    Panel293: TPanel;
+    Panel294: TPanel;
+    Label82: TLabel;
+    Panel295: TPanel;
+    Panel296: TPanel;
+    Panel297: TPanel;
+    Label83: TLabel;
+    Panel298: TPanel;
+    Panel299: TPanel;
+    Panel301: TPanel;
+    Panel306: TPanel;
+    EditLengthB: TEdit;
+    EditNumB: TEdit;
+    EditDateC: TEdit;
+    Panel307: TPanel;
+    Panel310: TPanel;
+    Panel311: TPanel;
+    Panel312: TPanel;
+    Panel313: TPanel;
+    Panel314: TPanel;
+    Panel315: TPanel;
+    Panel308: TPanel;
+    Panel272: TPanel;
+    Panel274: TPanel;
+    PaintBox1: TPaintBox;
+    Panel190: TPanel;
+    ListView1: TListView;
+    Panel192: TPanel;
+    Panel275: TPanel;
+    PanelBackB: TPanel;
+    Label84: TLabel;
+    Label87: TLabel;
+    Panel277: TPanel;
+    Panel280: TPanel;
+    Panel281: TPanel;
+    Panel300: TPanel;
+    Label88: TLabel;
+    Label89: TLabel;
+    Label91: TLabel;
+    Panel66: TPanel;
+    Panel94: TPanel;
+    Panel302: TPanel;
+    Panel304: TPanel;
+    Panel48: TPanel;
+    Label22: TLabel;
+    Panel82: TPanel;
+    PaintBoxRoundC: TPaintBox;
+    Panel303: TPanel;
+    Panel309: TPanel;
+    Panel319: TPanel;
+    Panel107: TPanel;
+    Panel81: TPanel;
+    Label93: TLabel;
+    Label94: TLabel;
+    Panel320: TPanel;
+    Panel321: TPanel;
+    PaintBoxRoundB: TPaintBox;
+    Panel322: TPanel;
+    Panel324: TPanel;
+    Panel325: TPanel;
+    Label95: TLabel;
+    Panel305: TPanel;
+    Label92: TLabel;
+    Label96: TLabel;
+    Panel323: TPanel;
+    Panel215: TPanel;
+    Label20: TLabel;
+    Panel216: TPanel;
+    LabelLength: TLabel;
+    Label99: TLabel;
+    Panel220: TPanel;
+    Panel221: TPanel;
+    Object_Hole_Number: TLabel;
+    Label101: TLabel;
+    Panel222: TPanel;
+    Object_Number: TLabel;
+    Label103: TLabel;
+    Panel328: TPanel;
+    Label38: TLabel;
+    Panel225: TPanel;
+    Panel228: TPanel;
+    Panel233: TPanel;
+    Label104: TLabel;
+    Panel326: TPanel;
+    Panel230: TPanel;
+    Panel231: TPanel;
+    Panel327: TPanel;
+    Panel329: TPanel;
+    Panel330: TPanel;
+    LabelNum: TLabel;
+    Label106: TLabel;
+    Panel331: TPanel;
+    LabelAnalyticalNum: TLabel;
+    Label108: TLabel;
+    Panel240: TPanel;
+    Panel241: TPanel;
+    LabelRelativeError: TLabel;
+    Label53: TLabel;
+    Panel332: TPanel;
+    Label_MeanF: TLabel;
+    Label110: TLabel;
+    Panel217: TPanel;
+    Panel218: TPanel;
+    LabelRelativeErrorMin: TLabel;
+    Label35: TLabel;
+    Panel333: TPanel;
+    LabelRelativeErrorMax: TLabel;
+    Label112: TLabel;
+    Panel257: TPanel;
+    Label40: TLabel;
+    Label105: TLabel;
+    Panel336: TPanel;
+    Label98: TLabel;
+    Label46: TLabel;
+    ListView2: TListView;
+    Label48: TLabel;
+    Label47: TLabel;
+    Label32: TLabel;
+    Label90: TLabel;
+    Panel338: TPanel;
+    Panel340: TPanel;
+    Panel238: TPanel;
+    Panel334: TPanel;
+    Panel335: TPanel;
+    Panel342: TPanel;
+    Panel343: TPanel;
+    Panel344: TPanel;
+    Panel345: TPanel;
+    Panel346: TPanel;
+    Panel347: TPanel;
+    PanelTitle: TPanel;
+    LabelTime: TLabel;
+    Label79: TLabel;
+    Panel349: TPanel;
+    Panel350: TPanel;
+    Panel351: TPanel;
+    Edit20: TEdit;
+    Panel43: TPanel;
+    Label50: TLabel;
+    LabelTitle: TPanel;
+    Panel189: TPanel;
+    Image24: TImage;
+    Image26: TImage;
+    Panel341: TPanel;
+    Panel353: TPanel;
+    Panel354: TPanel;
+    Panel355: TPanel;
+    Panel128: TPanel;
+    Panel337: TPanel;
+    Panel88: TPanel;
+    Panel95: TPanel;
+    Panel339: TPanel;
+    Panel356: TPanel;
+    Panel357: TPanel;
+    Label80: TLabel;
+    Image30: TImage;
+    Panel358: TPanel;
+    Panel360: TPanel;
+    Panel361: TPanel;
+    Panel359: TPanel;
+    Panel362: TPanel;
+    Panel363: TPanel;
+    Image31: TImage;
+    Panel364: TPanel;
+    Label85: TLabel;
+    Panel365: TPanel;
+    Panel366: TPanel;
+    Image32: TImage;
+    Panel367: TPanel;
+    Label97: TLabel;
+    Panel368: TPanel;
+    Panel369: TPanel;
+    Panel262: TPanel;
+    Panel263: TPanel;
+    Panel264: TPanel;
+    Panel288: TPanel;
+    Image33: TImage;
+    Panel289: TPanel;
+    Label100: TLabel;
+    Panel290: TPanel;
+    Panel291: TPanel;
+    Image34: TImage;
+    Panel370: TPanel;
+    Label102: TLabel;
+    Panel371: TPanel;
+    Panel372: TPanel;
+    Panel373: TPanel;
+    Panel374: TPanel;
+    Panel375: TPanel;
+    Panel376: TPanel;
+    Image35: TImage;
+    Panel377: TPanel;
+    Label107: TLabel;
+    Panel378: TPanel;
+    Panel379: TPanel;
+    Image36: TImage;
+    Panel380: TPanel;
+    Label109: TLabel;
+    Panel381: TPanel;
+    Panel382: TPanel;
+    Panel45: TPanel;
+    Panel100: TPanel;
+    Panel191: TPanel;
+    Panel316: TPanel;
+    Panel317: TPanel;
+    Panel318: TPanel;
+    Label111: TLabel;
+    Image37: TImage;
+    Panel383: TPanel;
+    Panel384: TPanel;
+    Panel385: TPanel;
+    Panel386: TPanel;
+    Panel387: TPanel;
+    Panel388: TPanel;
+    Panel389: TPanel;
+    Panel390: TPanel;
+    Panel391: TPanel;
+    Panel392: TPanel;
+    Panel393: TPanel;
+    Image38: TImage;
+    Panel394: TPanel;
+    Label113: TLabel;
+    Panel395: TPanel;
+    Panel396: TPanel;
+    Panel50: TPanel;
+    Panel51: TPanel;
+    Panel54: TPanel;
+    Panel397: TPanel;
+    Panel398: TPanel;
+    Panel399: TPanel;
+    Panel400: TPanel;
+    Panel401: TPanel;
+    Image39: TImage;
+    Panel402: TPanel;
+    Label114: TLabel;
+    Panel403: TPanel;
+    Panel404: TPanel;
+    Label122: TLabel;
+    Label86: TLabel;
+    LabelTitle1: TPanel;
+    Label14: TLabel;
+    Panel29: TPanel;
+    { *** 函数/过程 目录 *** }
+    { #.构造函数 }
+    procedure FormCreate(Sender: TObject);
+    procedure Init();
+    procedure InitInfo();
+    procedure InitSegData();
+    { #.开始界面 }
+    procedure ShowBeginTabSheet();
+    procedure LoadSegDataBase(path: String);
+    function SearchDir(pPath: String; index: integer): TStringList;
+    { #.其它 }
+    procedure Timer1Timer(Sender: TObject);
+    { #.绘图函数 }
+    procedure PaintABCD(); // 根据当前界面参数属性值,选择绘制
+    procedure PaintA(); // 原始数据_绘制图A
+    procedure PaintB(); // 长度分析_绘制图B
+    procedure PaintC(); // 预应力分析_绘制图C
+    procedure InitMyPen_WinLine();
+    procedure PaintLine();
+
+    { #.绘圆函数_孔道模型--3个函数 }
+    procedure inner_circle_center(var innercir_cen: array of Tpoint;
+      out_px, out_py, out_r, inner_num, inner_r: integer);
+    // 该函数由 内院的数目 得到 内圆的圆心
+    procedure Draw_out_inner(cvs: TPaintBox; inner_num: integer;
+      inner_Staus: array of integer);
+    // 绘制整个模型
+    Function inner_mouseon_num(out_px, out_py, out_r, x, y,
+      inner_num: integer): integer;
+    // 该函数用来返回鼠标所在的圆 若没有选中则返回 0   第一个圆返回 1
+
+    { 0.总体面板控制,参数更新(由"参数类"+Timer共同完成) }
+
+    procedure CloseAll(Sender: TObject);
+    procedure Show1(Sender: TObject); // 开始面板
+    procedure Show1_1(Sender: TObject); // 开始面板子页1
+    procedure Show1_2(Sender: TObject); // 开始面板子页2
+    procedure ShowSet(Sender: TObject); // 展开参数设置面板
+    procedure HideSet(Sender: TObject); // 隐藏参数设置面板
+
+    procedure ShowSource(Sender: TObject);
+    procedure ShowLength(Sender: TObject);
+    procedure ShowForce(Sender: TObject);
+    procedure ShowResult(Sender: TObject);
+
+    Function OpenFile(FileName:String;number:Integer):Boolean;
+    { 1.开始界面 }
+    { 2.源数据分析 }
+    procedure PaintBoxAMouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; x, y: integer);
+    { 3.长度分析 }
+    { 4.预应力分析 }
+    { 5.结果展示 }
+    { @.calculate }
+    procedure calculate();
+    procedure MyAnonymousThread(i: integer);
+    procedure ListView1CustomDrawSubItem(Sender: TCustomListView;
+      Item: TListItem; SubItem: integer; State: TCustomDrawState;
+      var DefaultDraw: Boolean);
+    procedure PaintBoxBMouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; x, y: integer);
+    procedure PaintBoxBMouseMove(Sender: TObject; Shift: TShiftState;
+      x, y: integer);
+    procedure PaintBoxBMouseUp(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; x, y: integer);
+    procedure BitBtnOKClick(Sender: TObject);
+    procedure PanelSet_OKClick(Sender: TObject);
+    procedure OK();
+    procedure PanelSetBackupClick(Sender: TObject);
+    procedure SelectWindowsMoveAClick(Sender: TObject);
+    procedure PaintBoxAPaint(Sender: TObject);
+    procedure PaintBoxBPaint(Sender: TObject);
+    procedure PaintBoxCPaint(Sender: TObject);
+    procedure WindowLeftAutoMove(Sender: TObject);
+    procedure WindowRightAutoMove(Sender: TObject);
+    procedure WindowLeftMove(Sender: TObject);
+    procedure WindowRightMove(Sender: TObject);
+    procedure Image21Click(Sender: TObject);
+    procedure Image20Click(Sender: TObject);
+    procedure AnalysisLength_ReviaryClickFalse(Sender: TObject);
+    procedure AnalysisLength_ReviaryClicktrue(Sender: TObject);
+    procedure PaintBoxCMouseMove(Sender: TObject; Shift: TShiftState;
+      x, y: integer);
+    procedure PaintBoxCMouseUp(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; x, y: integer);
+    procedure PaintBoxCMouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; x, y: integer);
+    procedure F_ok(Sender: TObject);
+    procedure Timer2Timer(Sender: TObject);
+    procedure PaintBoxRoundPaint(Sender: TObject);
+    procedure PaintBoxRoundMouseMove(Sender: TObject; Shift: TShiftState;
+      x, y: integer);
+    procedure PaintBoxRoundMouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; x, y: integer);
+    procedure ListView1CustomDrawItem(Sender: TCustomListView; Item: TListItem;
+      State: TCustomDrawState; var DefaultDraw: Boolean);
+    procedure BitBtnNextClick(Sender: TObject);
+    procedure BitBtnBackClick(Sender: TObject);
+    procedure ListView1Click(Sender: TObject);
+    procedure PaintBox1Paint(Sender: TObject);
+    { ********************** }
+    procedure CreateParams(var Params: TCreateParams); override;
+    procedure ListView2CustomDrawItem(Sender: TCustomListView; Item: TListItem;
+      State: TCustomDrawState; var DefaultDraw: Boolean);
+    procedure HistoryOpen(Sender: TObject);
+     //解决窗体打开时闪烁问题
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+  Seg1: Seg;
+  LWPNumber: integer; // 线程序号
+  oldX, oldCX: integer;
+
+  inner_numAll, out_px, out_py, out_r: integer;
+  inner_Staus: Array of integer;
+
+  FilePath: String = 'C:\锚索测量数据库';
+  PageIndex: integer = 0;   //0~6
+  CurPath:Array [0..6] of String ;// 0、2、4、6  为所选文件的路径
+                                  // 1、3、5     为所选择的文件名
+
+  TheAnalysisNumber:Integer = 0;
+
+
+implementation
+
+{$R *.dfm}
+{ *** 函数/过程 目录 *** }
+{ #.构造函数 }
+{ #.其它 }
+{ #.绘图函数 }
+{ 0.总体面板控制,参数更新(由"参数类"+Timer共同完成) }
+{ 1.开始界面 }
+{ 2.源数据分析 }
+{ 3.长度分析 }
+{ 4.预应力分析 }
+{ 5.结果展示 }
+{ ********************** }
+
+procedure TForm1.CreateParams(var Params: TCreateParams);
+ begin    //解决窗体打开时闪烁问题
+   inherited;
+   Params.ExStyle := 33554432; //0x 02 00 00 00
+ end;
+
+{ #.构造函数 }{ ****************************************************************** }{ 0.构造函数 }
+
+procedure TForm1.FormCreate(Sender: TObject);
+var
+  i: integer;
+begin
+  Form1.Hide;
+  Form1.Width := 800;
+  Form1.Height := 600;
+  Form1.Left := trunc((Screen.Width - Form1.Width) / 2);
+  Form1.Top := trunc((Screen.Height - Form1.Height) / 2);
+  Form1.WindowState :=  wsMaximized;//窗体最大化
+
+  PanelSet.Hide;
+
+  PanelSet.Align := alNone;
+  PanelMessage.Hide;
+  PanelMessage.Align := alNone;
+  PanelMessage.Width := 500;
+  PanelMessage.Height := 230;
+  PanelMessage.Top := trunc((Screen.Height - PanelMessage.Height) / 2);
+  PanelMessage.Left := trunc((Screen.Width - PanelMessage.Width) / 2);
+
+  PageControlAll.ActivePage := TabSheetWellcome;
+  PageControl1.ActivePage := TabSheet1_1;
+
+  FilePath := ExtractFileDir(Application.Exename)+ '\锚索测量数据库';
+  if DirectoryExists(FilePath) then
+  begin
+    CurPath[0]:= FilePath;
+  end else begin
+    CurPath[0]:='C:\锚索测量数据库';
+    FilePath := 'C:\锚索测量数据库';
+  end;
+
+  ShowBeginTabSheet();
+
+  Form1.Show;
+end;
+
+
+procedure TForm1.F_ok(Sender: TObject);
+begin
+  Seg1.Control1.calculateF := true;
+
+  Seg1.Result1[TheAnalysisNumber].L := StrToFloat(FreedomLength.Caption);
+  Seg1.Result1[TheAnalysisNumber].F := 4 * StrToFloat(density.Text) * sqr(Seg1.Result1[TheAnalysisNumber].L) *
+    sqr(Seg1.Result1[TheAnalysisNumber].baseHz/1000);
+
+  F.Caption := FloatToStr(trunc(Seg1.Result1[TheAnalysisNumber].F * 100) / 100);
+
+  Seg1.Control1.calculateF := false;
+end;
+
+
+
+procedure TForm1.WindowLeftAutoMove(Sender: TObject);
+begin
+  if Seg1.Control1.WindowLeftAutoMove then
+  begin
+    Seg1.Control1.SelectWindowsMove := false;
+    Seg1.Control1.WindowRightAutoMove := false;
+    Seg1.Control1.WindowLeftAutoMove := false;
+    LabelWindowRightAutoMove.Caption := '关';
+    LabelWindowLeftAutoMove.Caption := '关';
+    SelectWindowsMoveB.Caption := '关';
+  end
+  else
+  begin
+    Seg1.Control1.SelectWindowsMove := false;
+    Seg1.Control1.WindowRightAutoMove := false;
+    Seg1.Control1.WindowLeftAutoMove := true;
+    LabelWindowRightAutoMove.Caption := '关';
+    LabelWindowLeftAutoMove.Caption := '开';
+    SelectWindowsMoveB.Caption := '关';
+  end
+end;
+
+procedure TForm1.WindowLeftMove(Sender: TObject);
+begin
+  Seg1.Control1.SelectWindowsMove := false;
+  Seg1.Control1.WindowRightAutoMove := false;
+  Seg1.Control1.WindowLeftAutoMove := false;
+  LabelWindowRightAutoMove.Caption := '关';
+  LabelWindowLeftAutoMove.Caption := '关';
+  SelectWindowsMoveB.Caption := '关';
+
+  Seg1.PaintWindow(PaintBoxB, Seg1.Control1.WindowBegin);
+  Seg1.Control1.WindowBegin := Seg1.Control1.WindowBegin - 20;
+  if (Seg1.Control1.WindowBegin < 0) then
+  begin
+    Seg1.Control1.WindowBegin := 0;
+  end;
+  if (20 + Seg1.Control1.WindowBegin + Seg1.CanShu1.WindowW *
+    (PaintBoxB.Width - 25) / Seg1.CanncelHead1[Seg1.Control1.TapeNumber]
+    .DataNum) > PaintBoxB.Width - 10 then
+  begin
+    Seg1.Control1.WindowBegin := trunc(PaintBoxB.Width - Seg1.CanShu1.WindowW *
+      (PaintBoxB.Width - 25) / Seg1.CanncelHead1[Seg1.Control1.TapeNumber]
+      .DataNum - 10 - 20);
+  end;
+
+  Seg1.PaintWindow(PaintBoxB, Seg1.Control1.WindowBegin);
+  PaintBoxB.Canvas.Pen.Mode := pmCopy;
+  PaintBoxB.Canvas.Pen.Color := clBlack;
+
+  Seg1.PaintOne(PaintBoxB, 20, integer(trunc(PaintBoxB.Height * 2 / 3)) + 15,
+    PaintBoxB.Width - 25, integer(trunc(PaintBoxB.Height / 3)) - 25 - 5,
+    Seg1.Control1.TapeNumber, 4);
+
+end;
+
+procedure TForm1.WindowRightAutoMove(Sender: TObject);
+begin
+  if Seg1.Control1.WindowRightAutoMove then
+  begin
+    Seg1.Control1.SelectWindowsMove := false;
+    Seg1.Control1.WindowRightAutoMove := false;
+    Seg1.Control1.WindowLeftAutoMove := false;
+    LabelWindowRightAutoMove.Caption := '关';
+    LabelWindowLeftAutoMove.Caption := '关';
+    SelectWindowsMoveB.Caption := '关';
+  end
+  else
+  begin
+    Seg1.Control1.SelectWindowsMove := false;
+    Seg1.Control1.WindowRightAutoMove := true;
+    Seg1.Control1.WindowLeftAutoMove := false;
+    LabelWindowRightAutoMove.Caption := '开';
+    LabelWindowLeftAutoMove.Caption := '关';
+    SelectWindowsMoveB.Caption := '关';
+  end
+end;
+
+procedure TForm1.WindowRightMove(Sender: TObject);
+begin
+
+  Seg1.Control1.SelectWindowsMove := false;
+  Seg1.Control1.WindowRightAutoMove := false;
+  Seg1.Control1.WindowLeftAutoMove := false;
+  LabelWindowRightAutoMove.Caption := '关';
+  LabelWindowLeftAutoMove.Caption := '关';
+  SelectWindowsMoveB.Caption := '关';
+
+  Seg1.PaintWindow(PaintBoxB, Seg1.Control1.WindowBegin);
+  Seg1.Control1.WindowBegin := Seg1.Control1.WindowBegin + 20;
+  if (Seg1.Control1.WindowBegin < 0) then
+  begin
+    Seg1.Control1.WindowBegin := 0;
+
+  end;
+  if (20 + Seg1.Control1.WindowBegin + Seg1.CanShu1.WindowW *
+    (PaintBoxB.Width - 25) / Seg1.CanncelHead1[Seg1.Control1.TapeNumber]
+    .DataNum) > PaintBoxB.Width - 10 then
+  begin
+    Seg1.Control1.WindowBegin := trunc(PaintBoxB.Width - Seg1.CanShu1.WindowW *
+      (PaintBoxB.Width - 25) / Seg1.CanncelHead1[Seg1.Control1.TapeNumber]
+      .DataNum - 10 - 20);
+
+  end;
+
+  Seg1.PaintWindow(PaintBoxB, Seg1.Control1.WindowBegin);
+  PaintBoxB.Canvas.Pen.Mode := pmCopy;
+  PaintBoxB.Canvas.Pen.Color := clBlack;
+
+  Seg1.PaintOne(PaintBoxB, 20, integer(trunc(PaintBoxB.Height * 2 / 3)) + 15,
+    PaintBoxB.Width - 25, integer(trunc(PaintBoxB.Height / 3)) - 25 - 5,
+    Seg1.Control1.TapeNumber, 4);
+
+end;
+
+
+
+procedure TForm1.ListView1Click(Sender: TObject);
+var
+  IniFile: TIniFile;
+begin
+  if ListView1.Selected <> nil then
+  begin
+    CurPath[PageIndex+1] := ListView1.Selected.Caption;
+    if SearchDir(CurPath[PageIndex] + '\' + CurPath[PageIndex+1], PageIndex).Count = 0 then
+    begin
+      showmessage('当前目录下没有文件！请核对！');
+    end else
+    begin
+      PageIndex := PageIndex + 1;
+      ShowBeginTabSheet();
+    end;
+  end;
+end;
+
+procedure TForm1.ListView1CustomDrawItem(Sender: TCustomListView;
+  Item: TListItem; State: TCustomDrawState; var DefaultDraw: Boolean);
+begin
+  if Item.index mod 2 = 0 then
+    Sender.Canvas.Brush.Color := clSkyBlue
+  else
+    Sender.Canvas.Brush.Color := clBtnFace;
+end;
+
+procedure TForm1.ListView1CustomDrawSubItem(Sender: TCustomListView;
+  Item: TListItem; SubItem: integer; State: TCustomDrawState;
+  var DefaultDraw: Boolean); // 实现不同行颜色不一样
+begin // OwnerDraw应该设置为False
+  if Item.index mod 2 = 0 then
+    Sender.Canvas.Brush.Color := clSkyBlue
+  else
+    Sender.Canvas.Brush.Color := clWhite;
+end;
+
+procedure TForm1.ListView2CustomDrawItem(Sender: TCustomListView;
+  Item: TListItem; State: TCustomDrawState; var DefaultDraw: Boolean);
+begin
+  if Item.index mod 2 = 0 then
+    Sender.Canvas.Brush.Color := clSkyBlue
+  else
+    Sender.Canvas.Brush.Color := clBtnFace;
+end;
+
+procedure TForm1.ShowBeginTabSheet();
+var
+  i:Integer;
+  IniFile,IniFile1,IniFile2: TIniFile;
+  Titem: TListItem;
+begin
+  case PageIndex of
+    0:begin
+        PanelBackB.Hide;
+        LabelTitle.Show;
+        PageControl1.ActivePageIndex := 0;
+        LoadSegDataBase(CurPath[PageIndex]);
+
+        IniFile := TIniFile.Create(CurPath[PageIndex] + '\history.ini');
+        Label48.Caption:=inifile.Readstring('history','section','');
+        Label47.Caption:=inifile.Readstring('history','project','');
+        Label32.Caption:=inifile.Readstring('history','channel','');
+        Label90.Caption:=inifile.Readstring('history','date','');
+        IniFile.Free;
+      end;
+    1:begin
+        CurPath[PageIndex+1]:=CurPath[PageIndex-1] + '\' + CurPath[PageIndex];
+        // 读section.ini
+        IniFile := TIniFile.Create(CurPath[PageIndex+1] + '\section.ini');
+        editFileName.Text := CurPath[PageIndex];
+        editName.Text:=inifile.Readstring('section','name','');
+        Editmileage.Text:=inifile.Readstring('section','mileage','');
+        EditBuilder.Text:=inifile.Readstring('section','builder','');
+        EditTester.Text:=inifile.Readstring('section','tester','');
+        EditData.Text:=inifile.Readstring('section','date','');
+        IniFile.Free;
+
+        PageControl1.ActivePageIndex := 1;
+      end;
+    2:begin
+        //写 section.ini
+        IniFile := TIniFile.Create(CurPath[PageIndex] + '\section.ini');
+        inifile.writestring('section','name',editName.Text);
+        inifile.writestring('section','mileage',EditMileage.Text);
+        inifile.writestring('section','builder',EditBuilder.Text);
+        inifile.writestring('section','tester',EditTester.Text);
+        inifile.writestring('section','date',EditData.Text);
+        IniFile.Free;
+
+        LoadSegDataBase(CurPath[PageIndex]);
+        PanelBackB.Show;
+        LabelTitle.Hide;
+        PageControl1.ActivePageIndex:= 0;
+      end;
+    3:begin
+        CurPath[PageIndex+1]:=CurPath[PageIndex-1] + '\' + CurPath[PageIndex];
+
+        // 读project.ini
+        IniFile := TIniFile.Create(CurPath[PageIndex+1] + '\project.ini');
+        EditFileName1.Text:=CurPath[PageIndex];
+        EditLength.Text:=inifile.Readstring('project','length','');
+        EditForce.Text:=inifile.Readstring('project','force','');
+        EditDateB.Text:=inifile.Readstring('project','date','');
+        IniFile.Free;
+
+        PageControl1.ActivePageIndex:= 2;
+      end;
+    4:begin
+        //写project.ini
+        IniFile := TIniFile.Create(CurPath[PageIndex] + '\project.ini');
+        inifile.writestring('project','length',EditLength.Text);
+        inifile.writestring('project','force',EditForce.Text);
+        inifile.writestring('project','date',EditDateB.Text);
+        IniFile.Free;
+
+        LoadSegDataBase(CurPath[PageIndex]);
+        PanelBackB.Show;
+        LabelTitle.Hide;
+        PageControl1.ActivePageIndex:= 0;
+      end;
+    5:begin
+        CurPath[PageIndex+1]:=CurPath[PageIndex-1] + '\' + CurPath[PageIndex];
+
+        // 读channel.ini
+        IniFile := TIniFile.Create(CurPath[PageIndex+1] + '\channel.ini');
+        EditNumB.Text:=inifile.Readstring('channel','number','');
+        EditLengthB.Text:=inifile.Readstring('channel','length','');
+        EditDateC.Text:=inifile.Readstring('channel','date','');
+        IniFile.Free;
+
+        PageControl1.ActivePageIndex := 3;
+
+        inner_numAll := StrToInt(EditNumB.Text);
+        setLength(inner_Staus, inner_numAll);
+
+        for i := 0 to inner_numAll - 1 do
+        begin
+          inner_Staus[i] := 0;
+        end;
+        Draw_out_inner(PaintBox1, inner_numAll, inner_Staus);
+
+      end;
+    6:begin
+        //写channel.ini
+        IniFile := TIniFile.Create(CurPath[PageIndex] + '\channel.ini');
+        inifile.writestring('channel','number',EditNumB.Text);
+        inifile.writestring('channel','length',EditLengthB.Text);
+        inifile.writestring('channel','date',EditDateC.Text);
+        IniFile.Free;
+
+        inner_numAll := StrToInt(EditNumB.Text);
+        for i := 0 to inner_numAll - 1 do
+        begin
+          inner_Staus[i] := 0;
+        end;
+        inner_Staus[0] := 2;
+        Seg1.Control1.Analysis_Type:=0;
+
+        if Form1.OpenFile(CurPath[PageIndex],1)=true then
+        begin
+            IniFile := TIniFile.Create(CurPath[0] + '\history.ini');
+            inifile.writestring('history','section',CurPath[1]);
+            inifile.writestring('history','project',CurPath[3]);
+            inifile.writestring('history','channel',CurPath[5]);
+            inifile.writestring('history','date',EditDateC.Text);
+
+            IniFile := TIniFile.Create(CurPath[0] + '\history.ini');
+            Label48.Caption:=inifile.Readstring('history','section','');
+            Label47.Caption:=inifile.Readstring('history','project','');
+            Label32.Caption:=inifile.Readstring('history','channel','');
+            Label90.Caption:=inifile.Readstring('history','date','');
+
+            ListView2.Clear;
+            ListView2.Columns.Clear;
+            ListView2.Columns.Add;
+            ListView2.Columns.Add;
+            ListView2.Columns.Add;
+            ListView2.Columns.Add;
+            ListView2.Columns.Add;
+            ListView2.Columns.Items[0].Caption := '编号';
+            ListView2.Columns.Items[1].Caption := '预应力(KN)';
+            ListView2.Columns.Items[2].Caption := '基频(平均值)KHz';
+            ListView2.Columns.Items[3].Caption := '自由段长度 m';
+            ListView2.Columns.Items[0].Width := 100;//615
+            ListView2.Columns.Items[1].Width := 150;
+            ListView2.Columns.Items[2].Width := 215;
+            ListView2.Columns.Items[3].Width := 150;
+            ListView2.Columns.Items[4].Width := ListView2.Width-615;
+            ListView2.ViewStyle := vsreport;
+            ListView2.GridLines := true;
+            ListView2.Font.Height:=25;
+            for i := 0 to inner_numAll-1 do
+            begin
+               Titem := ListView2.Items.Add;
+               Titem.Caption := IntToStr(i+1);
+               Titem.SubItems.Add('23');
+               Titem.SubItems.Add('0');
+               Titem.SubItems.Add('0');
+            end;
+
+            Label92.Caption:='1';
+            Label12.Caption:='1';
+            Label46.Caption:='1';
+
+            ObjectName.Caption:=editFileName.Text;
+            Object_Number.Caption:=EditFileName1.Text;
+            Object_Hole_Number.Caption:=CurPath[PageIndex-1];
+            LabelLength.Caption:=EditLength.Text;
+            LabelForce.Caption:=EditForce.Text;
+        end else
+        begin
+          ShowMessage('文件打开失败,请检测数据文件！');
+        end;
+        PageIndex:=5;
+      end;
+  end;
+
+end;
+
+procedure TForm1.LoadSegDataBase(path: String);
+var
+  number: integer;
+  Titem: TListItem;
+  i: integer;
+  sl: TStringList;
+  IniFile: TIniFile;
+  sr: TSearchRec;
+  dft: DWORD;
+  ImageList1:TImageList;
+begin
+  ListView1.Clear;
+  ListView1.Columns.Clear;
+  ListView1.Columns.Add;
+  ListView1.Columns.Add;
+  ListView1.Columns.Add;
+  case PageIndex of
+    0:ListView1.Columns.Items[0].Caption := '标段名称';
+    2:ListView1.Columns.Items[0].Caption := '工程编号';
+    4:ListView1.Columns.Items[0].Caption := '孔道编号';
+  end;
+  ListView1.Columns.Items[1].Caption := '子文件数';
+  ListView1.Columns.Items[2].Caption := '修改时间';
+  ListView1.Columns.Items[0].Width := 200;
+  ListView1.Columns.Items[1].Width := 107;
+  ListView1.Columns.Items[2].Width := 206;
+  ListView1.ViewStyle := vsreport;
+  ListView1.GridLines := true;
+  ListView1.Font.Height:=25;
+
+  sl := SearchDir(path, PageIndex);
+  number := sl.Count;
+  for i := 0 to number - 1 do
+  begin
+    if DirectoryExists(path + '\' + sl[i]) then
+    begin
+      Titem := ListView1.Items.Add;
+      Titem.Caption := sl[i];
+
+      FindFirst(path + '\' + sl[i], faAnyFile, sr);
+      FileTimeToDosDateTime(sr.FindData.ftCreationTime, LongRec(dft).Hi,
+        LongRec(dft).Lo);
+      Titem.SubItems.Add(IntToStr(SearchDir(CurPath[PageIndex] + '\' + sl[i],
+        PageIndex).Count));
+      Titem.SubItems.Add((DateTimeToStr((FileDateToDateTime(dft)))));
+    end;
+  end;
+end;
+
+procedure TForm1.Init();
+var
+  i: integer;
+begin
+  Seg1.Control1.FreedomEnd := trunc(PaintBoxB.Width / 3);
+  Seg1.Control1.FixedEnd := trunc(PaintBoxB.Width * 2 / 3);
+
+  for i := 0 to Seg1.TapeHead1.TapeNum - 1 do
+  begin
+    Seg1.Control1.baseHzBegin[i] := trunc(PaintBoxC.Width / 3);
+    Seg1.Control1.baseHzEnd[i] := trunc(PaintBoxC.Width / 3) + 15;
+    Seg1.Control1.baseHzBeginChoose[i] := false;
+    Seg1.Control1.baseHzEndChoose[i] := false;
+  end;
+
+end;
+
+function TForm1.SearchDir(pPath: String; index: integer): TStringList;
+var
+  found: integer;
+  lStringList: TStringList;
+  tempPath: String;
+  searchRec: TSearchRec;
+begin
+  Result := TStringList.Create;
+  tempPath := pPath + '\*.*';
+  if index = 4 then
+  begin
+    found := FindFirst(tempPath, faAnyFile, searchRec);
+    while found = 0 do // 找到了一个文件或目录后
+    begin
+      // 如果找到的是个目录
+      if (searchRec.Attr and faAnyFile) <> 0 then
+      begin
+        if (searchRec.Name <> '.') and (searchRec.Name <> '..') then
+        begin
+          Result.Add(searchRec.Name);
+        end;
+      end;
+      found := FindNext(searchRec);
+    end;
+  end
+  else
+  begin
+    found := FindFirst(tempPath, faDirectory, searchRec);
+    while found = 0 do // 找到了一个文件或目录后
+    begin
+      // 如果找到的是个目录
+      if (searchRec.Attr and faDirectory) <> 0 then
+      begin
+        if (searchRec.Name <> '.') and (searchRec.Name <> '..') then
+        begin
+          Result.Add(searchRec.Name);
+        end;
+      end;
+      found := FindNext(searchRec);
+    end;
+  end;
+end;
+
+procedure TForm1.InitInfo();
+begin
+  Num.Text := IntToStr(Seg1.TapeHead1.TapeNum);
+end;
+
+procedure TForm1.InitSegData();
+var
+  i: integer;
+begin
+  Seg1.CanShu1.HZ_Filter1.HZ_1 := StrToFloat(HZ_1.Text);
+  Seg1.CanShu1.HZ_Filter1.HZ_2 := StrToFloat(HZ_2.Text);
+  Seg1.CanShu1.MHZ_Width := StrToFloat(MHZ_Width.Text); // 最大宽度
+  Seg1.CanShu1.MHZ_threshold := StrToFloat(MHZ_threshold.Text) / 100; // 主频阈值
+  Seg1.CanShu1.WindowW := StrToInt(WindowW.Text);
+
+  Seg1.Control1.WindowBegin := 0;
+
+  Seg1.CanShu1.wave1 := StrToFloat(wave1.Text);
+  Seg1.CanShu1.wave2 := StrToFloat(wave2.Text);
+end;
+
+{ #.其它 }{ ********************************************************************** }{ #.其它 }
+procedure TForm1.Timer1Timer(Sender: TObject);
+begin
+  LabelTime.Caption := FormatDateTime('hh:nn',Now());
+
+  FreedomLengthB.Text := FreedomLength.Caption;
+  Seg1.Result1[TheAnalysisNumber].FreeLong:= StrTofloat(FreedomLength.Caption);
+  densityB.Text := density.Text;
+
+  if PageControlAll.ActivePage = TabSheetLength then
+  begin
+    AnalysisLength_Reviary_true.Checked := Seg1.Control1.AnalysisLength_Reviary;
+    AnalysisLength_Reviary_false.Checked :=
+      not Seg1.Control1.AnalysisLength_Reviary;
+
+    TapeNumber.Caption := IntToStr(Seg1.Control1.TapeNumber + 1);
+    FreedomLength.Caption :=
+      FloatToStr(trunc((Seg1.Control1.FreedomEnd / (PaintBoxB.Width - 25) *
+      Seg1.CanncelHead1[Seg1.Control1.TapeNumber].DataNum * 0.000002 *
+      Seg1.CanShu1.wave1 / 2 + 0.05) * 10) / 10);
+    FixedLength.Caption :=
+      FloatToStr(trunc(((Seg1.Control1.FixedEnd - Seg1.Control1.FreedomEnd) /
+      (PaintBoxB.Width - 25) * Seg1.CanncelHead1[Seg1.Control1.TapeNumber]
+      .DataNum * 0.000002 * Seg1.CanShu1.wave2 / 2 + 0.05) * 10) / 10);
+  end;
+
+  if LWPNumber = Seg1.TapeHead1.TapeNum then
+  begin
+    PanelMessage.Hide;
+    Form1.Enabled := true;
+    PaintABCD();
+    LWPNumber := 0;
+  end;
+
+  if Seg1.Control1.WindowRightAutoMove or Seg1.Control1.WindowLeftAutoMove then
+  begin
+    Seg1.PaintWindow(PaintBoxB, Seg1.Control1.WindowBegin);
+
+    if Seg1.Control1.WindowRightAutoMove then
+    begin
+      Seg1.Control1.WindowBegin := Seg1.Control1.WindowBegin + 2;
+    end
+    else if Seg1.Control1.WindowLeftAutoMove then
+    begin
+      Seg1.Control1.WindowBegin := Seg1.Control1.WindowBegin - 2;
+    end;
+
+    if (Seg1.Control1.WindowBegin < 0) then
+    begin
+      Seg1.Control1.WindowBegin := 0;
+
+      Seg1.Control1.SelectWindowsMove := false;
+      Seg1.Control1.WindowRightAutoMove := false;
+      Seg1.Control1.WindowLeftAutoMove := false;
+      LabelWindowRightAutoMove.Caption := '关';
+      LabelWindowLeftAutoMove.Caption := '关';
+      SelectWindowsMoveB.Caption := '关';
+    end;
+    if (20 + Seg1.Control1.WindowBegin + Seg1.CanShu1.WindowW *
+      (PaintBoxB.Width - 25) / Seg1.CanncelHead1[Seg1.Control1.TapeNumber]
+      .DataNum) > PaintBoxB.Width - 10 then
+    begin
+      Seg1.Control1.WindowBegin := trunc(PaintBoxB.Width - Seg1.CanShu1.WindowW
+        * (PaintBoxB.Width - 25) / Seg1.CanncelHead1[Seg1.Control1.TapeNumber]
+        .DataNum - 10 - 20);
+
+      Seg1.Control1.SelectWindowsMove := false;
+      Seg1.Control1.WindowRightAutoMove := false;
+      Seg1.Control1.WindowLeftAutoMove := false;
+      LabelWindowRightAutoMove.Caption := '关';
+      LabelWindowLeftAutoMove.Caption := '关';
+      SelectWindowsMoveB.Caption := '关';
+
+    end;
+
+    Seg1.PaintWindow(PaintBoxB, Seg1.Control1.WindowBegin);
+    PaintBoxB.Canvas.Pen.Mode := pmCopy;
+    PaintBoxB.Canvas.Pen.Color := clBlack;
+
+    Seg1.PaintOne(PaintBoxB, 20, integer(trunc(PaintBoxB.Height * 2 / 3)) + 15,
+      PaintBoxB.Width - 25, integer(trunc(PaintBoxB.Height / 3)) - 25 - 5,
+      Seg1.Control1.TapeNumber, 4);
+  end
+
+end;
+
+procedure TForm1.Timer2Timer(Sender: TObject);
+var
+  i: integer;
+  n, TheBaseHz: Double;
+begin
+  if (PageControlAll.ActivePage = TabSheetForce) and
+    (Seg1.Control1.calculateF = false) then
+  begin
+    n := 1;
+    while (n < Seg1.Control1.FreedomEnd / (PaintBoxC.Width - 25) *
+      Seg1.CanncelHead1[Seg1.Control1.TapeNumber].DataNum) do n:=n*2;
+      n := n * 2 * 2; // 继续放大一倍，提高精度
+
+      TheBaseHz := 0;
+      for i := 1 to Seg1.TapeHead1.TapeNum - 1 do
+      begin
+        TheBaseHz := TheBaseHz + (Seg1.Control1.baseHzEnd[i] -
+          Seg1.Control1.baseHzBegin[i])*n/(PaintBoxC.Width-25)/20 * 500 / n;
+      end;
+      Seg1.Result1[TheAnalysisNumber].baseHz := TheBaseHz / Seg1.TapeHead1.TapeNum *1000 ;
+      baseHz.Caption := FloatToStr(trunc(Seg1.Result1[TheAnalysisNumber].baseHz /1000 * 100) / 100);
+
+  end;
+end;
+
+{ #.绘图函数 }{ ****************************************************************** }{ 0.绘图函数 }
+procedure TForm1.PaintABCD(); // 原始数据_绘制图A
+begin
+
+  if PageControlAll.ActivePage = TabSheetSource then
+  begin
+    if Seg1.Control1.Analysis_Type < 1 then
+    begin
+      Seg1.Control1.Analysis_Type := 1;
+    end;
+    PaintBoxA.Refresh;
+    PaintA();
+  end
+  else if PageControlAll.ActivePage = TabSheetLength then
+  begin
+    PaintBoxB.Refresh;
+    PaintB();
+  end
+  else if PageControlAll.ActivePage = TabSheetForce then
+  begin
+    PaintBoxC.Refresh;
+    PaintC();
+  end;
+end;
+
+procedure TForm1.PaintA(); // 原始数据_绘制图A
+begin
+  Seg1.PaintN(PaintBoxA, 0, 0, PaintBoxA.Width, PaintBoxA.Height, 11);
+end;
+
+procedure TForm1.PaintB(); // 长度分析_绘制图B
+begin
+  if Seg1.Control1.AnalysisLength_Reviary then
+  begin
+    Seg1.PaintN(PaintBoxB, 0, 0, PaintBoxB.Width, PaintBoxB.Height, 22);
+    InitMyPen_WinLine();
+  end
+  else
+  begin
+    Seg1.PaintN(PaintBoxB, 0, 0, PaintBoxB.Width, PaintBoxB.Height, 21);
+    Seg1.PaintWindow(PaintBoxB, Seg1.Control1.WindowBegin);
+    InitMyPen_WinLine();
+  end;
+end;
+
+procedure TForm1.PaintC(); // 预应力分析_绘制图C
+begin
+  Seg1.PaintN(PaintBoxC, 0, 0, PaintBoxC.Width, PaintBoxC.Height, 31);
+  InitMyPen_WinLine();
+end;
+
+procedure TForm1.PanelSetBackupClick(Sender: TObject);
+begin
+  HZ_1.Text := FloatToStr(Seg1.CanShu1.HZ_Filter1.HZ_1);
+  HZ_2.Text := FloatToStr(Seg1.CanShu1.HZ_Filter1.HZ_2);
+  MHZ_Width.Text := FloatToStr(Seg1.CanShu1.MHZ_Width);
+  MHZ_threshold.Text := FloatToStr(Seg1.CanShu1.MHZ_threshold * 100);
+  WindowW.Text := IntToStr(Seg1.CanShu1.WindowW);
+  wave1.Text := FloatToStr(Seg1.CanShu1.wave1);
+  wave2.Text := FloatToStr(Seg1.CanShu1.wave2);
+end;
+
+procedure TForm1.OK();
+begin
+  HZ_1B.Text := HZ_1.Text;
+  HZ_2B.Text := HZ_2.Text;
+  MHZ_WidthB.Text := MHZ_Width.Text;
+  MHZ_thresholdB.Text := MHZ_threshold.Text;
+  WindowWB.Text := WindowW.Text;
+
+  InitSegData();
+  Seg1.BufFFtToBufFilter(Seg1.CanShu1.HZ_Filter1.HZ_1,
+    Seg1.CanShu1.HZ_Filter1.HZ_2);
+  calculate();
+end;
+
+procedure TForm1.PanelSet_OKClick(Sender: TObject);
+begin
+  OK;
+end;
+
+procedure TForm1.Image20Click(Sender: TObject);
+begin
+  if (Seg1.Control1.TapeNumber >= 0) and
+    (Seg1.Control1.TapeNumber < Seg1.TapeHead1.TapeNum - 1) then
+  begin
+    Seg1.Control1.TapeNumber := Seg1.Control1.TapeNumber + 1;
+    PaintB();
+  end;
+end;
+
+procedure TForm1.Image21Click(Sender: TObject);
+begin
+  if (Seg1.Control1.TapeNumber > 0) and
+    (Seg1.Control1.TapeNumber <= Seg1.TapeHead1.TapeNum - 1) then
+  begin
+    Seg1.Control1.TapeNumber := Seg1.Control1.TapeNumber - 1;
+    PaintB();
+  end;
+end;
+
+procedure TForm1.InitMyPen_WinLine();
+var
+  i: integer;
+begin
+  if PageControlAll.ActivePage = TabSheetLength then
+  begin
+    if Seg1.Control1.AnalysisLength_Reviary then
+    begin
+      for i := 0 to (Seg1.TapeHead1.TapeNum - 1) do
+      begin
+        if i = Seg1.TapeHead1.TapeNum - 1 then
+        begin
+          PaintBoxB.Canvas.Pen.Mode := pmNotXor;
+          PaintBoxB.Canvas.Pen.Style := psDot;
+          PaintBoxB.Canvas.Pen.Color := $0000FF;
+          PaintBoxB.Canvas.MoveTo(20 + Seg1.Control1.FreedomEnd,
+            trunc(PaintBoxB.Height / Seg1.TapeHead1.TapeNum * i) + 15);
+          PaintBoxB.Canvas.LineTo(20 + Seg1.Control1.FreedomEnd,
+            trunc(PaintBoxB.Height / Seg1.TapeHead1.TapeNum * (i + 1) + 15 - 5 -
+            29 + 0.5));
+          PaintBoxB.Canvas.Pen.Color := $800000;
+          PaintBoxB.Canvas.MoveTo(20 + Seg1.Control1.FixedEnd,
+            trunc(PaintBoxB.Height / Seg1.TapeHead1.TapeNum * i) + 15);
+          PaintBoxB.Canvas.LineTo(20 + Seg1.Control1.FixedEnd,
+            trunc(PaintBoxB.Height / Seg1.TapeHead1.TapeNum * (i + 1) + 15 - 5 -
+            29 + 0.5));
+
+        end
+        else
+        begin
+          PaintBoxB.Canvas.Pen.Mode := pmNotXor;
+          PaintBoxB.Canvas.Pen.Style := psDot;
+          PaintBoxB.Canvas.Pen.Color := $0000FF;
+          PaintBoxB.Canvas.MoveTo(20 + Seg1.Control1.FreedomEnd,
+            trunc(PaintBoxB.Height / Seg1.TapeHead1.TapeNum * i) + 15);
+          PaintBoxB.Canvas.LineTo(20 + Seg1.Control1.FreedomEnd,
+            trunc(PaintBoxB.Height / Seg1.TapeHead1.TapeNum * (i + 1) + 15 -
+            29 + 0.5));
+          PaintBoxB.Canvas.Pen.Color := $800000;
+          PaintBoxB.Canvas.MoveTo(20 + Seg1.Control1.FixedEnd,
+            trunc(PaintBoxB.Height / Seg1.TapeHead1.TapeNum * i) + 15);
+          PaintBoxB.Canvas.LineTo(20 + Seg1.Control1.FixedEnd,
+            trunc(PaintBoxB.Height / Seg1.TapeHead1.TapeNum * (i + 1) + 15 -
+            29 + 0.5));
+        end;
+      end;
+    end
+    else
+    begin
+      PaintBoxB.Canvas.Pen.Mode := pmNotXor;
+      PaintBoxB.Canvas.Pen.Style := psDot;
+      PaintBoxB.Canvas.Pen.Color := $0000FF;
+      PaintBoxB.Canvas.MoveTo(20 + Seg1.Control1.FreedomEnd, 15);
+      PaintBoxB.Canvas.LineTo(20 + Seg1.Control1.FreedomEnd,
+        trunc(15 + PaintBoxB.Height / 3 - 29 + 0.5));
+
+      PaintBoxB.Canvas.MoveTo(20 + Seg1.Control1.FreedomEnd,
+        trunc(15 + PaintBoxB.Height / 3 + 0.5));
+      PaintBoxB.Canvas.LineTo(20 + Seg1.Control1.FreedomEnd,
+        trunc(15 + PaintBoxB.Height * 2 / 3 - 29 + 0.5));
+
+      PaintBoxB.Canvas.Pen.Color := $800000;
+      PaintBoxB.Canvas.MoveTo(20 + Seg1.Control1.FixedEnd, 15);
+      PaintBoxB.Canvas.LineTo(20 + Seg1.Control1.FixedEnd,
+        trunc(15 + PaintBoxB.Height / 3 - 29 + 0.5));
+
+      PaintBoxB.Canvas.MoveTo(20 + Seg1.Control1.FixedEnd,
+        trunc(15 + PaintBoxB.Height / 3 + 0.5));
+      PaintBoxB.Canvas.LineTo(20 + Seg1.Control1.FixedEnd,
+        trunc(15 + PaintBoxB.Height * 2 / 3 - 29 + 0.5));
+      PaintBoxB.Canvas.Pen.Style := psSolid;
+    end
+  end;
+
+    for i := 0 to (Seg1.TapeHead1.TapeNum-1) do
+    begin
+
+        PaintBoxC.Canvas.Pen.Mode := pmNotXor;
+        PaintBoxC.Canvas.Pen.Style := psDot;
+        PaintBoxC.Canvas.Pen.Color := $0000FF;
+        PaintBoxC.Canvas.MoveTo(20 + Seg1.Control1.baseHzBegin[i], trunc(PaintBoxC.Height/Seg1.TapeHead1.TapeNum*i)+14);
+        PaintBoxC.Canvas.LineTo(20 + Seg1.Control1.baseHzBegin[i], trunc(PaintBoxC.Height / Seg1.TapeHead1.TapeNum*(i+1)+15 - 25 + 0.5));
+        PaintBoxC.Canvas.Pen.Color:=$800000;
+        PaintBoxC.Canvas.MoveTo(20 + Seg1.Control1.baseHzEnd[i], trunc(PaintBoxC.Height/Seg1.TapeHead1.TapeNum*i)+14);
+        PaintBoxC.Canvas.LineTo(20 + Seg1.Control1.baseHzEnd[i], trunc(PaintBoxC.Height / Seg1.TapeHead1.TapeNum*(i+1)+15 - 25 + 0.5));
+
+    end;
+end;
+
+procedure TForm1.PaintLine();
+var
+  i: integer;
+begin
+  if PageControlAll.ActivePage = TabSheetLength then
+  begin
+    if Seg1.Control1.AnalysisLength_Reviary then
+    begin
+      for i := 0 to (Seg1.TapeHead1.TapeNum - 1) do
+      begin
+        if i = Seg1.TapeHead1.TapeNum - 1 then
+        begin
+          PaintBoxB.Canvas.Pen.Mode := pmNotXor;
+          PaintBoxB.Canvas.Pen.Style := psDot;
+          PaintBoxB.Canvas.Pen.Color := $0000FF;
+          PaintBoxB.Canvas.MoveTo(20 + Seg1.Control1.FreedomEnd,
+            trunc(PaintBoxB.Height / Seg1.TapeHead1.TapeNum * i) + 15);
+          PaintBoxB.Canvas.LineTo(20 + Seg1.Control1.FreedomEnd,
+            trunc(PaintBoxB.Height / Seg1.TapeHead1.TapeNum * (i + 1) + 15 - 5 -
+            29 + 0.5));
+          PaintBoxB.Canvas.Pen.Color := $800000;
+          PaintBoxB.Canvas.MoveTo(20 + Seg1.Control1.FixedEnd,
+            trunc(PaintBoxB.Height / Seg1.TapeHead1.TapeNum * i) + 15);
+          PaintBoxB.Canvas.LineTo(20 + Seg1.Control1.FixedEnd,
+            trunc(PaintBoxB.Height / Seg1.TapeHead1.TapeNum * (i + 1) + 15 - 5 -
+            29 + 0.5));
+
+        end
+        else
+        begin
+          PaintBoxB.Canvas.Pen.Mode := pmNotXor;
+          PaintBoxB.Canvas.Pen.Style := psDot;
+          PaintBoxB.Canvas.Pen.Color := $0000FF;
+          PaintBoxB.Canvas.MoveTo(20 + Seg1.Control1.FreedomEnd,
+            trunc(PaintBoxB.Height / Seg1.TapeHead1.TapeNum * i) + 15);
+          PaintBoxB.Canvas.LineTo(20 + Seg1.Control1.FreedomEnd,
+            trunc(PaintBoxB.Height / Seg1.TapeHead1.TapeNum * (i + 1) + 15 -
+            29 + 0.5));
+          PaintBoxB.Canvas.Pen.Color := $800000;
+          PaintBoxB.Canvas.MoveTo(20 + Seg1.Control1.FixedEnd,
+            trunc(PaintBoxB.Height / Seg1.TapeHead1.TapeNum * i) + 15);
+          PaintBoxB.Canvas.LineTo(20 + Seg1.Control1.FixedEnd,
+            trunc(PaintBoxB.Height / Seg1.TapeHead1.TapeNum * (i + 1) + 15 -
+            29 + 0.5));
+        end;
+      end;
+    end
+    else
+    begin
+      if Seg1.Control1.FreedomEndChoose = true then
+      begin
+        PaintBoxB.Canvas.Pen.Mode := pmNotXor;
+        PaintBoxB.Canvas.Pen.Style := psDot;
+        PaintBoxB.Canvas.Pen.Color := $0000FF;
+        PaintBoxB.Canvas.MoveTo(20 + Seg1.Control1.FreedomEnd, 15);
+        PaintBoxB.Canvas.LineTo(20 + Seg1.Control1.FreedomEnd,
+          trunc(15 + PaintBoxB.Height / 3 - 29 + 0.5));
+
+        PaintBoxB.Canvas.MoveTo(20 + Seg1.Control1.FreedomEnd,
+          trunc(15 + PaintBoxB.Height / 3 + 0.5));
+        PaintBoxB.Canvas.LineTo(20 + Seg1.Control1.FreedomEnd,
+          trunc(15 + PaintBoxB.Height * 2 / 3 - 29 + 0.5));
+      end
+      else if Seg1.Control1.FixedEndChoose = true then
+      begin
+        PaintBoxB.Canvas.Pen.Mode := pmNotXor;
+        PaintBoxB.Canvas.Pen.Style := psDot;
+        PaintBoxB.Canvas.Pen.Color := $800000;
+        PaintBoxB.Canvas.MoveTo(20 + Seg1.Control1.FixedEnd, 15);
+        PaintBoxB.Canvas.LineTo(20 + Seg1.Control1.FixedEnd,
+          trunc(15 + PaintBoxB.Height / 3 - 29 + 0.5));
+
+        PaintBoxB.Canvas.MoveTo(20 + Seg1.Control1.FixedEnd,
+          trunc(15 + PaintBoxB.Height / 3 + 0.5));
+        PaintBoxB.Canvas.LineTo(20 + Seg1.Control1.FixedEnd,
+          trunc(15 + PaintBoxB.Height * 2 / 3 - 29 + 0.5));
+      end;
+    end
+  end;
+
+  if PageControlAll.ActivePage = TabSheetForce then
+  begin
+      for i := 0 to (Seg1.TapeHead1.TapeNum-1) do
+      begin
+
+          PaintBoxC.Canvas.Pen.Mode := pmNotXor;
+          PaintBoxC.Canvas.Pen.Style := psDot;
+          PaintBoxC.Canvas.Pen.Color := $0000FF;
+          PaintBoxC.Canvas.MoveTo(20 + Seg1.Control1.baseHzBegin[i], trunc(PaintBoxC.Height/Seg1.TapeHead1.TapeNum*i)+15);
+          PaintBoxC.Canvas.LineTo(20 + Seg1.Control1.baseHzBegin[i], trunc(PaintBoxC.Height / Seg1.TapeHead1.TapeNum*(i+1)+15 - 29 + 0.5));
+          PaintBoxC.Canvas.Pen.Color:=$800000;
+          PaintBoxC.Canvas.MoveTo(20 + Seg1.Control1.baseHzEnd[i], trunc(PaintBoxC.Height/Seg1.TapeHead1.TapeNum*i)+15);
+          PaintBoxC.Canvas.LineTo(20 + Seg1.Control1.baseHzEnd[i], trunc(PaintBoxC.Height / Seg1.TapeHead1.TapeNum*(i+1)+15 - 29 + 0.5));
+      end;
+  end
+end;
+
+procedure TForm1.inner_circle_center(var innercir_cen: array of Tpoint;
+  out_px, out_py, out_r, inner_num, inner_r: integer);
+// 该函数由 内院的数目 得到 内圆的圆心
+var
+  i: integer;
+  out_center: Tpoint; // 定义内外圆圆心
+begin
+  out_center.x := out_px + out_r;
+  out_center.y := out_py + out_r;
+  case inner_num of
+    1:
+      Begin
+        innercir_cen[0].x := out_center.x; // 第一个内圆圆心存放在数组 第0个位置
+        innercir_cen[0].y := out_center.y;
+      End;
+    2:
+      Begin
+        for i := 0 to 1 do
+        begin
+          innercir_cen[i].x := out_center.x +
+            Round(out_r / 2 * sin(3 * pi / 2 + pi * i));
+          innercir_cen[i].y := out_center.y -
+            Round(out_r / 2 * cos(3 * pi / 2 + pi * i));
+        end;
+      End;
+    3:
+      Begin
+        for i := 0 to 2 do
+        begin
+          innercir_cen[i].x := out_center.x +
+            Round(out_r / 2 * sin(2 * pi * i / 3));
+          innercir_cen[i].y := out_center.y -
+            Round(out_r / 2 * cos(2 * pi * i / 3));
+        end;
+      End;
+    4:
+      Begin
+        for i := 0 to 3 do
+        begin
+          innercir_cen[i].x := out_center.x +
+            Round(out_r / 2 * sin(7 * pi / 4 + pi * i / 2));
+          innercir_cen[i].y := out_center.y -
+            Round(out_r / 2 * cos(7 * pi / 4 + pi * i / 2));
+        end;
+      End;
+    5:
+      Begin
+        for i := 0 to 4 do
+        begin
+          innercir_cen[i].x := out_center.x +
+            Round(out_r / 2 * sin(2 * i * pi / 5));
+          innercir_cen[i].y := out_center.y -
+            Round(out_r / 2 * cos(2 * i * pi / 5));
+        end;
+      End;
+    6:
+      Begin
+        for i := 0 to 5 do
+        begin
+          innercir_cen[i].x := out_center.x +
+            Round(out_r / 2 * sin(i * pi / 3));
+          innercir_cen[i].y := out_center.y -
+            Round(out_r / 2 * cos(i * pi / 3));
+        end;
+      End;
+    7:
+      Begin
+        for i := 0 to 5 do
+        begin
+          innercir_cen[i].x := out_center.x +
+            Round(out_r / 2 * sin(i * pi / 3));
+          innercir_cen[i].y := out_center.y -
+            Round(out_r / 2 * cos(i * pi / 3));
+        end;
+        innercir_cen[6].x := out_center.x;
+        innercir_cen[6].y := out_center.y;
+      End;
+    8:
+      Begin
+        for i := 0 to 7 do
+        begin
+          innercir_cen[i].x := out_center.x +
+            Round(out_r * 2 / 3 * sin(i * pi / 4));
+          innercir_cen[i].y := out_center.y -
+            Round(out_r * 2 / 3 * cos(i * pi / 4));
+        end;
+
+      End;
+    9:
+      Begin
+        for i := 0 to 7 do
+        begin
+          innercir_cen[i].x := out_center.x +
+            Round(out_r * 2 / 3 * sin(i * pi / 4));
+          innercir_cen[i].y := out_center.y -
+            Round(out_r * 2 / 3 * cos(i * pi / 4));
+        end;
+        innercir_cen[8].x := out_center.x;
+        innercir_cen[8].y := out_center.y;
+      End;
+    10:
+      Begin
+        for i := 0 to 7 do
+        begin
+          innercir_cen[i].x := out_center.x +
+            Round(out_r * 2 / 3 * sin(i * pi / 4));
+          innercir_cen[i].y := out_center.y -
+            Round(out_r * 2 / 3 * cos(i * pi / 4));
+        end;
+        innercir_cen[8].x := out_center.x - Round(out_r * 1 / 5);
+        innercir_cen[8].y := out_center.y;
+
+        innercir_cen[9].x := out_center.x + Round(out_r * 1 / 5);
+        innercir_cen[9].y := out_center.y;
+      End;
+    11:
+      Begin
+        for i := 0 to 7 do
+        begin
+          innercir_cen[i].x := out_center.x +
+            Round(out_r * 2 / 3 * sin(i * pi / 4));
+          innercir_cen[i].y := out_center.y -
+            Round(out_r * 2 / 3 * cos(i * pi / 4));
+        end;
+        for i := 8 to 10 do
+        begin
+          innercir_cen[i].x := out_center.x +
+            Round(out_r / 3 * sin(pi / 6 + 2 * pi / 3 + i * 2 * pi / 3));
+          innercir_cen[i].y := out_center.y -
+            Round(out_r / 3 * cos(pi / 6 + 2 * pi / 3 + i * 2 * pi / 3));
+        end;
+      End;
+    12:
+      Begin
+        for i := 0 to 8 do
+        begin
+          innercir_cen[i].x := out_center.x +
+            Round(out_r * 2 / 3 * sin(i * 2 * pi / 9));
+          innercir_cen[i].y := out_center.y -
+            Round(out_r * 2 / 3 * cos(i * 2 * pi / 9));
+        end;
+        for i := 9 to 11 do
+        begin
+          innercir_cen[i].x := out_center.x +
+            Round(out_r / 3 * sin(pi / 6 + i * 2 * pi / 3));
+          innercir_cen[i].y := out_center.y -
+            Round(out_r / 3 * cos(pi / 6 + i * 2 * pi / 3));
+        end;
+      End;
+    14:
+      Begin
+        for i := 0 to 9 do
+        begin
+          innercir_cen[i].x := out_center.x +
+            Round(out_r * 2 / 3 * sin(i * pi / 5));
+          innercir_cen[i].y := out_center.y -
+            Round(out_r * 2 / 3 * cos(i * pi / 5));
+        end;
+        for i := 10 to 13 do
+        begin
+          innercir_cen[i].x := out_center.x +
+            Round(out_r / 3 * sin(pi + pi / 10 + i * pi / 2));
+          innercir_cen[i].y := out_center.y -
+            Round(out_r / 3 * cos(pi + pi / 10 + i * pi / 2));
+        end;
+      End;
+    15:
+      Begin
+        for i := 0 to 9 do
+        begin
+          innercir_cen[i].x := out_center.x +
+            Round(out_r * 2 / 3 * sin(i * pi / 5));
+          innercir_cen[i].y := out_center.y -
+            Round(out_r * 2 / 3 * cos(i * pi / 5));
+        end;
+        for i := 10 to 14 do
+        begin
+          innercir_cen[i].x := out_center.x +
+            Round(out_r / 3 * sin(i * 2 * pi / 5));
+          innercir_cen[i].y := out_center.y -
+            Round(out_r / 3 * cos(i * 2 * pi / 5));
+        end;
+      End;
+  end; // 与case 相对的 end
+end;
+
+procedure TForm1.Draw_out_inner(cvs: TPaintBox; inner_num: integer;
+  inner_Staus: array of integer);
+// 参数说明：
+// out_px out_py  外圆位置      out_r  外圆半径  inner_num  内圆数目 inner_r  内圆半径 inner_click_num 被选中的的圆的序号(为0表示没有)
+// inner_staus 记录每一个圆是否被选中     out_pen_color  外圆线的颜色  inner_pen_color  内圆线的颜色
+var
+  i: integer;
+  innercir_cen: array of Tpoint;
+  // out_px,out_py:integer;
+  out_r: integer;
+  inner_r: integer;
+Begin
+  setLength(innercir_cen, inner_num);
+
+  cvs.Canvas.Pen.Width := 2;
+  cvs.Canvas.Pen.Color := clWhite;
+
+  out_px := 2;
+  out_py := 2;
+  out_r := cvs.Width div 2;
+  inner_r := trunc(out_r * 3 / 20);
+  cvs.Canvas.Brush.Color := $00D58E55;
+  cvs.Canvas.Ellipse(out_px, out_py, cvs.Width - 2, cvs.Width - 2);
+  // 重绘时，刷上背景色，以实现初始化
+  cvs.Canvas.Font.Size := 12;
+  cvs.Canvas.Font.Style := [fsBold];
+  cvs.Canvas.Pen.Width := 3;
+  inner_circle_center(innercir_cen, out_px, out_py, out_r, inner_num, inner_r);
+  for i := 0 to inner_num - 1 do
+  begin
+    if inner_Staus[i] = 1 then // 判断被选中的内圆的序号
+      cvs.Canvas.Pen.Color := $007D491F;
+    if inner_Staus[i] = 0 then
+      cvs.Canvas.Pen.Color := clWhite;
+    if inner_Staus[i] = 2 then
+      cvs.Canvas.Pen.Color := clred;
+    cvs.Canvas.Font.Color := cvs.Canvas.Pen.Color;
+    cvs.Canvas.Ellipse(innercir_cen[i].x - inner_r, innercir_cen[i].y - inner_r,
+      innercir_cen[i].x + inner_r, innercir_cen[i].y + inner_r);
+    if i < 9 then
+      cvs.Canvas.TextOut(innercir_cen[i].x - Round(inner_r * 2 / 5),
+        innercir_cen[i].y - Round(inner_r * 3 / 5)-3, IntToStr(i + 1))
+    else
+      cvs.Canvas.TextOut(innercir_cen[i].x - Round(inner_r * 3 / 5),
+        innercir_cen[i].y - Round(inner_r * 4 / 6)-3, IntToStr(i + 1));
+  End;
+
+  innercir_cen := nil;
+End;
+
+Function TForm1.inner_mouseon_num(out_px, out_py, out_r, x, y,
+  inner_num: integer): integer;
+// 该函数用来返回鼠标所在的圆 若没有选中则返回 0   第一个圆返回 1
+var
+  i, inner_r: integer;
+  temp_dis: integer; // 暂存鼠标到圆心的距离
+  innercir_cen: array of Tpoint;
+begin
+  inner_r := trunc(out_r * 3 / 20);
+
+  setLength(innercir_cen, inner_num);
+  inner_circle_center(innercir_cen, out_px, out_py, out_r, inner_num, inner_r);
+  // 得到内圆圆心
+  for i := 0 to inner_num - 1 do
+  begin
+    temp_dis := Round(Sqrt(power((x - innercir_cen[i].x), 2) +
+      power((y - innercir_cen[i].y), 2)));
+    if temp_dis <= inner_r then
+    begin
+      // Form1.Caption:='鼠标在第'+inttostr(i+1)+'个圆上';
+      Result := i + 1;
+      break;
+    end
+    else if temp_dis > inner_r then
+    begin
+      // Form1.Caption:='内外圆程序';
+      Result := 0; // 如果鼠标没在圆上
+    end;
+  end;
+
+end;
+
+{ 0.总体面板控制,参数更新(由"参数类"+Timer共同完成) }{ ************************** }{ 0.总体面板控制 }
+procedure TForm1.CloseAll(Sender: TObject);
+begin
+  close;
+end;
+
+procedure TForm1.SelectWindowsMoveAClick(Sender: TObject);
+begin
+  if Seg1.Control1.SelectWindowsMove then
+  begin
+    Seg1.Control1.SelectWindowsMove := false;
+    Seg1.Control1.WindowRightAutoMove := false;
+    Seg1.Control1.WindowLeftAutoMove := false;
+    LabelWindowRightAutoMove.Caption := '关';
+    LabelWindowLeftAutoMove.Caption := '关';
+    SelectWindowsMoveB.Caption := '关';
+  end
+  else
+  begin
+    Seg1.Control1.SelectWindowsMove := true;
+    Form1.SelectWindowsMoveB.Caption := '开';
+
+    Seg1.Control1.WindowRightAutoMove := false;
+    Seg1.Control1.WindowLeftAutoMove := false;
+    LabelWindowRightAutoMove.Caption := '关';
+    LabelWindowLeftAutoMove.Caption := '关';
+  end
+end;
+
+procedure TForm1.Show1(Sender: TObject);
+begin
+  PageControlAll.ActivePage := TabSheetWellcome; // 设置PageControl组件的当前页
+end;
+
+procedure TForm1.Show1_1(Sender: TObject); // 开始面板子页1
+begin
+  PageControl1.ActivePage := TabSheet1_1; // 设置PageControl组件的当前页
+end;
+
+procedure TForm1.Show1_2(Sender: TObject); // 开始面板子页2
+begin
+  PageControl1.ActivePage := TabSheet1_2; // 设置PageControl组件的当前页
+end;
+
+procedure TForm1.ShowSet(Sender: TObject); // 展开参数设置面板
+begin
+  PanelSet.Top := 0;
+  PanelSet.Left := Form1.Width - PanelSet.Width;
+  PanelSet.Height := Form1.Height;
+  PanelSet.Show;
+end;
+
+procedure TForm1.HideSet(Sender: TObject); // 隐藏参数设置面板
+begin
+  PanelSet.Hide;
+end;
+
+procedure TForm1.HistoryOpen(Sender: TObject);
+var
+  i:Integer;
+begin
+  PageIndex:=0;
+  if Label48.Caption <> '' then
+  begin
+    CurPath[PageIndex+1] := Label48.Caption;
+    if SearchDir(CurPath[PageIndex] + '\' + CurPath[PageIndex+1], PageIndex).Count = 0 then
+    begin
+      showmessage('当前目录下没有文件！请核对！');
+    end else
+    begin
+      PageIndex := PageIndex + 1;
+      ShowBeginTabSheet();
+      PageIndex := PageIndex + 1;
+      ShowBeginTabSheet();
+
+      if Label47.Caption <> '' then
+      begin
+        CurPath[PageIndex+1] := Label47.Caption;
+        if SearchDir(CurPath[PageIndex] + '\' + CurPath[PageIndex+1], PageIndex).Count = 0 then
+        begin
+          showmessage('当前目录下没有文件！请核对！');
+        end else
+        begin
+          PageIndex := PageIndex + 1;
+          ShowBeginTabSheet();
+          PageIndex := PageIndex + 1;
+          ShowBeginTabSheet();
+
+          if Label32.Caption <> '' then
+          begin
+            CurPath[PageIndex+1] := Label32.Caption;
+            if SearchDir(CurPath[PageIndex] + '\' + CurPath[PageIndex+1], PageIndex).Count = 0 then
+            begin
+              showmessage('当前目录下没有文件！请核对！');
+            end else
+            begin
+              PageIndex := PageIndex + 1;
+              ShowBeginTabSheet();
+              PageIndex := PageIndex + 1;
+              ShowBeginTabSheet();
+
+            end;
+          end;
+        end;
+      end;
+    end;
+  end;
+
+end;
+
+procedure TForm1.ShowSource(Sender: TObject);
+begin
+  PageControlAll.ActivePage := TabSheetSource; // 设置PageControl组件的当前页
+  if Seg1.Control1.Analysis_Type < 1 then
+  begin
+    Seg1.Control1.Analysis_Type := 1;
+  end;
+end;
+
+procedure TForm1.ShowLength(Sender: TObject);
+begin
+  PageControlAll.ActivePage := TabSheetLength; // 设置PageControl组件的当前页
+  if Seg1.Control1.Analysis_Type < 2 then
+  begin
+    Seg1.Control1.Analysis_Type := 2;
+  end;
+end;
+
+procedure TForm1.ShowForce(Sender: TObject);
+begin
+  if Seg1.Control1.Analysis_Type >= 2 then
+  begin
+    PageControlAll.ActivePage := TabSheetForce; // 设置PageControl组件的当前页
+    // PaintC();
+    if Seg1.Control1.Analysis_Type = 2 then
+    begin
+      Seg1.Control1.Analysis_Type := 3;
+    end;
+  end
+  else
+  begin
+    showmessage('长度分析未完成,无法继续！');
+  end
+end;
+
+procedure TForm1.ShowResult(Sender: TObject);
+var
+  Titem: TListItem;
+  i,AnalyticalNum: integer;
+  MeanForce,DesignForce,MaxForce,MinForce:double;
+begin
+  if Seg1.Control1.Analysis_Type >= 3 then
+  begin
+    PageControlAll.ActivePage := TabSheetResult; // 设置PageControl组件的当前页
+    Seg1.Control1.Analysis_Type := 4;
+    AnalyticalNum:=0;
+    MeanForce:=0;
+    MaxForce:=0;
+
+    for i := 0 to inner_numAll - 1 do
+    begin
+        if (inner_Staus[i]=1) or (inner_Staus[i]=2) then
+        begin
+          Seg1.Result1[i].F := trunc(4 * StrToFloat(density.Text) * sqr(Seg1.Result1[i].FreeLong) *
+              sqr(Seg1.Result1[i].baseHz/1000)*100)/100;
+          MeanForce:=MeanForce+Seg1.Result1[i].F;
+          if MaxForce < Seg1.Result1[i].F then
+          begin
+             MaxForce:= Seg1.Result1[i].F;
+          end;
+
+          AnalyticalNum:=AnalyticalNum+1;
+          ListView2.Items[i].SubItems[0] := FloatToStr(Trunc(Seg1.Result1[i].F *100)/100);
+          ListView2.Items[i].SubItems[1] := FloatToStr(trunc(Seg1.Result1[i].BaseHz/1000*100)/100);
+          ListView2.Items[i].SubItems[2] := FloatToStr(Seg1.Result1[i].FreeLong);
+        end;
+    end;
+    MinForce:=MaxForce;
+    for i := 0 to inner_numAll - 1 do
+    begin
+      if (inner_Staus[i]=1) or (inner_Staus[i]=2) then
+      begin
+        if MinForce > Seg1.Result1[i].F then
+        begin
+           MinForce:= Seg1.Result1[i].F;
+        end;
+      end;
+    end;
+
+    LabelNum.Caption:= IntToStr(inner_numAll);
+    LabelAnalyticalNum.Caption:=IntToStr(AnalyticalNum);
+    DesignForce:= StrToFloat(EditForce.Text);
+    Label_MeanF.Caption:=FloatToStr(abs(trunc(MeanForce/AnalyticalNum*100)/100));
+    LabelRelativeError.Caption:=FloatToStr(abs(trunc((MeanForce/AnalyticalNum-DesignForce/inner_numAll)/(DesignForce/inner_numAll)*10000)/100));
+    LabelRelativeErrorMax.Caption:=FloatToStr(abs(trunc((MaxForce-DesignForce/inner_numAll)/(DesignForce/inner_numAll)*10000)/100));
+    LabelRelativeErrorMin.Caption:=FloatToStr(abs(trunc((MinForce-DesignForce/inner_numAll)/(DesignForce/inner_numAll)*10000)/100));
+
+  end
+  else
+  begin
+    showmessage('预应力分析未完成,无法继续！');
+  end
+end;
+
+{ 1.开始界面 }{ ***************************************************************** }{ 1.开始界面 }
+Function TForm1.OpenFile(FileName:String;number:Integer):Boolean;
+var
+  i: integer;
+begin
+  FileName:=FileName + '\' + IntToStr(number)+'.seg';
+  if FileName <> '' then
+  begin
+    Seg1.ReadSeg(Filename);
+    InitInfo;
+
+    if Seg1.Control1.Analysis_Type=0 then
+    begin
+
+      PageControlAll.ActivePage := TabSheetSource; // 设置PageControl组件的当前页
+      Init;
+      Form1.Show;
+    end;
+    OK;
+    TheAnalysisNumber:=number-1;
+    Result:=true;
+  end else
+  begin
+    ShowMessage('文件缺失');
+    Result:=false;
+  end;
+end;
+
+procedure TForm1.AnalysisLength_ReviaryClickFalse(Sender: TObject);
+begin
+  if Seg1.Control1.AnalysisLength_Reviary then
+  begin
+    Seg1.Control1.AnalysisLength_Reviary := false;
+    PanelPaintSet.Show;
+    PaintB();
+  end;
+end;
+
+procedure TForm1.AnalysisLength_ReviaryClicktrue(Sender: TObject);
+begin
+  if Seg1.Control1.AnalysisLength_Reviary = false then
+  begin
+    Seg1.Control1.AnalysisLength_Reviary := true;
+    PanelPaintSet.Hide;
+    PaintB();
+  end;
+end;
+
+procedure TForm1.BitBtnNextClick(Sender: TObject);
+var
+  IniFile: TIniFile;
+begin
+  PageIndex := PageIndex + 1;
+  ShowBeginTabSheet();
+end;
+
+procedure TForm1.BitBtnBackClick(Sender: TObject);
+begin
+  PageIndex := PageIndex - 1;
+  ShowBeginTabSheet();
+end;
+
+procedure TForm1.BitBtnOKClick(Sender: TObject);
+begin
+  HZ_1.Text := HZ_1B.Text;
+  HZ_2.Text := HZ_2B.Text;
+  MHZ_Width.Text := MHZ_WidthB.Text;
+  MHZ_threshold.Text := MHZ_thresholdB.Text;
+  WindowW.Text := WindowWB.Text;
+
+  InitSegData();
+  Seg1.BufFFtToBufFilter(Seg1.CanShu1.HZ_Filter1.HZ_1,
+    Seg1.CanShu1.HZ_Filter1.HZ_2);
+  calculate();
+  // PaintABCD();
+end;
+
+{ 2.源数据分析 }{ *************************************************************** }{ 2.源数据分析 }
+
+
+procedure TForm1.PaintBox1Paint(Sender: TObject);
+begin
+  Draw_out_inner(PaintBox1, inner_numAll, inner_Staus);
+end;
+
+procedure TForm1.PaintBoxAMouseDown(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; x, y: integer);
+begin
+  if PageControlAll.ActivePage = TabSheetSource then
+  begin
+    Seg1.Control1.TapeNumber :=
+      (y div (PaintBoxA.Height div Seg1.TapeHead1.TapeNum));
+    Seg1.Control1.WindowBegin := 0;
+    PageControlAll.ActivePage := TabSheetLength; // 设置PageControl组件的当前页
+
+    if Seg1.Control1.Analysis_Type < 2 then
+    begin
+      Seg1.Control1.Analysis_Type := 2;
+    end;
+  end;
+
+end;
+
+procedure TForm1.PaintBoxAPaint(Sender: TObject);
+begin
+  PaintA();
+end;
+
+{ 3.长度分析 }{ *************************************************************** }{ 3.长度分析 }
+procedure TForm1.PaintBoxBMouseDown(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; x, y: integer);
+begin
+  oldX := x;
+  Seg1.Control1.WindowsMove := true;
+
+  if (x - 20 >= Seg1.Control1.FreedomEnd - 10) and
+    (x - 20 <= Seg1.Control1.FreedomEnd + 10) then
+    Seg1.Control1.FreedomEndChoose := true;
+  if (x - 20 >= Seg1.Control1.FixedEnd - 10) and
+    (x - 20 <= Seg1.Control1.FixedEnd + 10) then
+    Seg1.Control1.FixedEndChoose := true;
+end;
+
+procedure TForm1.PaintBoxBMouseMove(Sender: TObject; Shift: TShiftState;
+  x, y: integer);
+begin
+  if Seg1.Control1.WindowsMove and Seg1.Control1.SelectWindowsMove then
+  begin
+    Seg1.PaintWindow(PaintBoxB, Seg1.Control1.WindowBegin);
+    Seg1.Control1.WindowBegin := Seg1.Control1.WindowBegin + x - oldX;
+    if (Seg1.Control1.WindowBegin < 0) then
+    begin
+      Seg1.Control1.WindowBegin := 0;
+    end;
+    if (20 + Seg1.Control1.WindowBegin + Seg1.CanShu1.WindowW *
+      (PaintBoxB.Width - 25) / Seg1.CanncelHead1[Seg1.Control1.TapeNumber]
+      .DataNum) > PaintBoxB.Width - 10 then
+    begin
+      Seg1.Control1.WindowBegin := trunc(PaintBoxB.Width - Seg1.CanShu1.WindowW
+        * (PaintBoxB.Width - 25) / Seg1.CanncelHead1[Seg1.Control1.TapeNumber]
+        .DataNum - 10 - 20);
+    end;
+
+    Seg1.PaintWindow(PaintBoxB, Seg1.Control1.WindowBegin);
+    PaintBoxB.Canvas.Pen.Mode := pmCopy;
+    PaintBoxB.Canvas.Pen.Color := clBlack;
+
+    Seg1.PaintOne(PaintBoxB, 20, integer(trunc(PaintBoxB.Height * 2 / 3)) + 15,
+      PaintBoxB.Width - 25, integer(trunc(PaintBoxB.Height / 3)) - 25 - 5,
+      Seg1.Control1.TapeNumber, 4);
+
+    oldX := x;
+  end;
+
+  if Seg1.Control1.SelectWindowsMove = false then
+  begin
+    if (Seg1.Control1.FreedomEnd >= 20 + trunc(Seg1.Control1.FreedomBegin *
+      PaintBoxB.Width / Seg1.CanncelHead1[Seg1.Control1.TapeNumber].DataNum +
+      0.5) + 5) and (Seg1.Control1.FreedomEnd <= Seg1.Control1.FixedEnd - 30)
+      and (Seg1.Control1.FreedomEndChoose = true) then
+    begin
+      PaintLine();
+
+      Seg1.Control1.FreedomEnd := Seg1.Control1.FreedomEnd + x - oldX;
+
+      if (Seg1.Control1.FreedomEnd < 20 + trunc(Seg1.Control1.FreedomBegin *
+        PaintBoxB.Width / Seg1.CanncelHead1[Seg1.Control1.TapeNumber].DataNum +
+        0.5) + 5) then
+        Seg1.Control1.FreedomEnd := 20 +
+          trunc(Seg1.Control1.FreedomBegin * PaintBoxB.Width / Seg1.CanncelHead1
+          [Seg1.Control1.TapeNumber].DataNum + 0.5) + 5;
+      if Seg1.Control1.FreedomEnd > Seg1.Control1.FixedEnd - 30 then
+        Seg1.Control1.FreedomEnd := Seg1.Control1.FixedEnd - 30;
+
+      PaintLine();
+
+      PaintBoxB.Canvas.Pen.Style := psSolid;
+      oldX := x;
+
+      Seg1.PaintN(PaintBoxB, 0, 0, PaintBoxB.Width, PaintBoxB.Height, 20);
+    end
+    else if (Seg1.Control1.FixedEnd >= Seg1.Control1.FreedomEnd + 30) and
+      (20 + Seg1.Control1.FixedEnd <= PaintBoxB.Width - 27) and
+      (Seg1.Control1.FixedEndChoose = true) then
+    begin
+      PaintLine();
+
+      Seg1.Control1.FixedEnd := Seg1.Control1.FixedEnd + x - oldX;
+      if Seg1.Control1.FixedEnd < Seg1.Control1.FreedomEnd + 30 then
+        Seg1.Control1.FixedEnd := Seg1.Control1.FreedomEnd + 30;
+      if Seg1.Control1.FixedEnd > PaintBoxB.Width - 27 - 20 then
+        Seg1.Control1.FixedEnd := PaintBoxB.Width - 27 - 20;
+
+      PaintLine();
+
+      PaintBoxB.Canvas.Pen.Style := psSolid;
+      oldX := x;
+
+      Seg1.PaintN(PaintBoxB, 0, 0, PaintBoxB.Width, PaintBoxB.Height, 20);
+    end;
+  end;
+end;
+
+procedure TForm1.PaintBoxBMouseUp(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; x, y: integer);
+begin
+  if Seg1.Control1.FreedomEndChoose or Seg1.Control1.FixedEndChoose then
+  begin
+    Seg1.Control1.FreedomEndChoose := false;
+    Seg1.Control1.FixedEndChoose := false;
+    // paintB();
+  end;
+
+  Seg1.Control1.WindowsMove := false;
+
+  PaintBoxB.Canvas.Pen.Mode := pmCopy;
+  PaintBoxB.Canvas.Pen.Color := clBlack;
+end;
+
+procedure TForm1.PaintBoxBPaint(Sender: TObject);
+begin
+  PaintB();
+end;
+
+procedure TForm1.PaintBoxCMouseDown(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; x, y: integer);
+begin
+
+  Seg1.Control1.baseHzNumber :=
+   (y div (PaintBoxC.Height div Seg1.TapeHead1.TapeNum));
+  oldX := x;
+
+  if (x - 20 >= Seg1.Control1.baseHzBegin[Seg1.Control1.baseHzNumber] - 3) and
+    (x - 20 <= Seg1.Control1.baseHzBegin[Seg1.Control1.baseHzNumber] + 3) then
+    Seg1.Control1.baseHzBeginChoose[Seg1.Control1.baseHzNumber] := true;
+
+  if (x - 20 >= Seg1.Control1.baseHzEnd[Seg1.Control1.baseHzNumber] - 3) and
+    (x - 20 <= Seg1.Control1.baseHzEnd[Seg1.Control1.baseHzNumber] + 3) then
+    Seg1.Control1.baseHzEndChoose[Seg1.Control1.baseHzNumber] := true;
+end;
+
+procedure TForm1.PaintBoxCMouseMove(Sender: TObject; Shift: TShiftState;
+  x, y: integer);
+var
+  i,TheBegin,TheEnd:Integer;
+begin
+  TheBegin:=Seg1.Control1.baseHzBegin[Seg1.Control1.baseHzNumber];
+  TheEnd:=Seg1.Control1.baseHzEnd[Seg1.Control1.baseHzNumber];
+
+  if (TheBegin >= 20 ) and (TheBegin <= TheEnd - 7)
+  and (Seg1.Control1.baseHzBeginChoose[Seg1.Control1.baseHzNumber])
+  then
+  begin
+    PaintLine();
+    TheBegin := TheBegin + x - oldX;
+    Seg1.Control1.baseHzBegin[Seg1.Control1.baseHzNumber] := TheBegin ;
+
+    if (TheBegin < 20 ) then TheBegin:= 20 ;
+    if TheBegin > TheEnd - 7 then TheBegin := TheEnd - 7;
+    Seg1.Control1.baseHzBegin[Seg1.Control1.baseHzNumber] := TheBegin ;
+    PaintLine();
+//    sleep(20);
+
+    PaintBoxC.Canvas.Pen.Style := psSolid;
+    oldX := x;
+  end;
+
+  if (TheEnd >= TheBegin + 7) and (TheEnd <= PaintBoxC.Width - 27)
+    and (Seg1.Control1.baseHzEndChoose[Seg1.Control1.baseHzNumber]) then
+  begin
+    PaintLine();
+
+    TheEnd := TheEnd + x - oldX;
+    Seg1.Control1.baseHzEnd[Seg1.Control1.baseHzNumber] := TheEnd ;
+
+    if TheEnd < TheBegin + 7 then TheEnd := TheBegin + 7;
+    if TheEnd > PaintBoxC.Width - 27 then TheEnd:= PaintBoxC.Width - 27 ;
+    Seg1.Control1.baseHzEnd[Seg1.Control1.baseHzNumber] := TheEnd ;
+
+    PaintLine();
+    PaintBoxC.Canvas.Pen.Style := psSolid;
+    oldX := x;
+  end;
+
+end;
+
+procedure TForm1.PaintBoxCMouseUp(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; x, y: integer);
+var
+  i, j, HzBegin, HzEnd, Max: integer;
+  n, TheBaseHz: Double;
+begin
+  Seg1.Control1.baseHzBeginChoose[Seg1.Control1.baseHzNumber] := false;
+  Seg1.Control1.baseHzEndChoose[Seg1.Control1.baseHzNumber] := false;
+
+  PaintBoxC.Canvas.Pen.Mode := pmCopy;
+  PaintBoxC.Canvas.Pen.Color := clBlack;
+end;
+
+procedure TForm1.PaintBoxCPaint(Sender: TObject);
+begin
+  PaintC();
+end;
+
+procedure TForm1.PaintBoxRoundMouseDown(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; x, y: integer);
+var
+  i, inner_click_num: integer;
+begin
+  inner_click_num := inner_mouseon_num(out_px, out_py, out_r, x, y,inner_numAll) - 1;
+    // 返回鼠标所在位置 第一个圆返回 1
+  if inner_click_num >= 0 then
+  begin
+      if Form1.OpenFile(CurPath[6],inner_click_num+1 ) then
+      begin
+
+        for i := 0 to inner_numAll - 1 do
+        begin
+          if inner_Staus[i] = 2 then inner_Staus[i] := 1;
+        end;
+        inner_Staus[inner_click_num] := 2;
+
+        Draw_out_inner(PaintBoxRoundA, inner_numAll, inner_Staus);
+        Draw_out_inner(PaintBoxRoundB, inner_numAll, inner_Staus);
+        Draw_out_inner(PaintBoxRoundC, inner_numAll, inner_Staus);
+        Label92.Caption:=IntToStr(inner_click_num+1);
+        Label12.Caption:=IntToStr(inner_click_num+1);
+        Label46.Caption:=IntToStr(inner_click_num+1);
+      end;
+  end;
+end;
+
+procedure TForm1.PaintBoxRoundMouseMove(Sender: TObject; Shift: TShiftState;
+  x, y: integer);
+var
+  inner_click_num: integer;
+begin
+  out_r := PaintBoxRoundA.Width div 2;
+  inner_click_num := inner_mouseon_num(out_px, out_py, out_r, x, y,
+    inner_numAll) - 1; // 返回鼠标所在位置 第一个圆返回 1
+end;
+
+procedure TForm1.PaintBoxRoundPaint(Sender: TObject);
+begin
+  Draw_out_inner(PaintBoxRoundA, inner_numAll, inner_Staus);
+  Draw_out_inner(PaintBoxRoundB, inner_numAll, inner_Staus);
+  Draw_out_inner(PaintBoxRoundC, inner_numAll, inner_Staus);
+end;
+
+{ 4.预应力分析 }{ ************************************************************** }{ 4.预应力分析 }
+
+{ 5.结果展示 }{ **************************************************************** }{ 5.结果展示 }
+
+{ @.calculate }{ ********************************************************************* }{ calculate }
+procedure TForm1.calculate();
+var
+  i: integer;
+begin
+  PanelMessage.BringToFront;
+  Form1.Enabled := false;
+  PanelMessage.Show;
+  LWPNumber := 0;
+
+  for i := 1 to Seg1.TapeHead1.TapeNum do
+  begin
+    MyAnonymousThread(i - 1);
+  end;
+end;
+
+procedure TForm1.MyAnonymousThread(i: integer);
+begin
+  TThread.CreateAnonymousThread(
+    procedure
+    begin
+      Seg1.BufToBufES(Seg1.CanShu1.WindowW, i);
+      LWPNumber := LWPNumber + 1;
+    end).Start; // 开启匿名多线程!!!
+end;
+
+initialization
+
+  ; // 这儿的代码在delphi程序初始化时自动执行
+Seg1 := Seg.Create;
+
+end.

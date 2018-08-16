@@ -1,0 +1,17 @@
+program Project1;
+
+uses
+  Vcl.Forms,
+  View in 'View.pas' {Form1},
+  Seg_Unit in 'Seg_Unit.pas',
+  FFt_Unit in 'FFt_Unit.pas',
+  Model in 'Model.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.
