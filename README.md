@@ -4,18 +4,18 @@
 ## 1.软件系统界面展示：
 
 ### 主页-锚索数据库
-![avatar](./img/[1]主页-锚索数据库.PNG)
+![avatar](./img/[1]主页-锚索数据库.jpg)
 
 ### 带通滤波-FFT
-![avatar](./img/[2]带通滤波.PNG)
+![avatar](./img/[2]带通滤波.jpg)
 
 ### 长度计算-STFT时频特征分析
-![avatar](./img/[3]长度计算-STFT.png)
+![avatar](./img/[3]长度计算-STFT.jpg)
 
 ### 长度计算-“STFT主频幅值比”模型
-![avatar](./img/[4]长度计算.png)
+![avatar](./img/[4]长度计算.jpg)
 
 ### 频差计算（由“频差法”计算预应力）
-![avatar](./img/[5]频差计算.png)
+![avatar](./img/[5]频差计算.jpg)
 
 
