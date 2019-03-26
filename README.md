@@ -1,3 +1,9 @@
+**Tip**:  This page can be translated by *Chrome Google Translate*
+
+**提示**: 本页面支持Chrome Google翻译
+
+***
+
 # SHM_StructuralHealthMonitoring
 [本科大学生创新项目] 结构健康监测SHM：预应力锚索无损检测分析(技术：DSP、FFT、STFT、Delphi)
 
@@ -26,4 +32,5 @@
 ### 频差计算（由“频差法”计算预应力）
 ![avatar](./img/[5]频差计算.jpg)
 
-
+# License
+[MIT](./LICENSE)
